@@ -343,7 +343,7 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 
 **相关语言：** 中文、英文
 
-使用教程：https://hci-top.notion.site/MiX-Copilot-Tutorial-English-2c95481c5d4c4c818f40bd04c299b7ea
+**使用教程：** https://hci-top.notion.site/MiX-Copilot-Tutorial-English-2c95481c5d4c4c818f40bd04c299b7ea
 
 **使用步骤：**
 1. 下载并安装软件
@@ -373,7 +373,11 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 *目前全球范围内可以兼容本地LLM的客户端极少，欢迎各位推荐或自荐*
 
 
-## 4. 使用本地开源LLMs需要注意什么？
+## 4. 使用本地LLMs需要注意什么？
+#### 1. 如何选择LLM并让其运行速度更快？
+#### 2. 当前LLM经常出现的问题有哪些？
+#### 3. 目前LLM能做什么？
+#### 4. TBD
 
 ## TBD
 ----------------
