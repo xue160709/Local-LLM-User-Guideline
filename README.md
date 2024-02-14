@@ -236,7 +236,7 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 
 ### 如何开启本地LLM
 #### 1. LM Studio
-![1.png](images%2F1.png)
+![1.png](images/1.png)
 
 **介绍**：LM Studio基于LLama.cpp开发了一套友好的用户界面，支持在Windows、Mac和Linux系统上安装和使用，提供了多种语言模型，并且提供了模型搜索、下载和聊天等功能。
 
@@ -249,11 +249,11 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 **使用步骤：**
 1. 下载并安装软件
 2. 在应用内下载模型，如果因网络等情况无法下载，可以选择存放LLM的文件夹后并在文件夹里新建一个名为“TheBloke”的文件夹，然后将下载过的模型放进“TheBloke”文件夹里。
-![2.png](images%2F2.png)
+![2.png](images/2.png)
 3. 点击”Select a model to load“选择模型即可开启对话模式，也可以根据自己电脑和模型选择对应的“GPU Acceleration”和“Context Length”，重新加载模型。（如果自己的电脑配置一般，建议不勾选”GPU Offload“，以及“Context Length”设置越大，等待时间会越长，更详细的介绍请看指南第四部分）
-![3.png](images%2F3.png)
+![3.png](images/3.png)
 4. 如果开启服务端模式，加载模型并填写端口（例如8000），点击“Start Server”即可运行。记住，客户端和服务端的通讯必须兼容OpenAI API模式。
-![4.png](images%2F4.png)
+![4.png](images/4.png)
 
 **优点：**
 1. 整体使用流程对普通用户友好。
@@ -269,7 +269,7 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 5. 如果你的系统是Windows/Linux，处理器需要支持AVX2。
 
 #### 2. llamafile
-![5.png](images%2F5.png)
+![5.png](images/5.png)
 
 **介绍**：llamafile将 llama.cpp 与 Cosmopolitan Libc 组合成一个框架，将 LLMs 的所有复杂性压缩为在大多数计算机上本地运行的单个文件可执行文件。
 
@@ -313,8 +313,8 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 **使用步骤：**
 1. 下载并打开执行文件
 2. 成功安装后会提示在cmd内运行模型，例如`ollama run mistral`（如果没有下载过模型会自动下载模型）。
-![6.png](/images/6.png)
-![7.png](images%2F7.png)
+![6.png](images/6.png)
+![7.png](images/7.png)
 3. 在cmd中开始对话
 
 **优点：**
@@ -333,7 +333,7 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 
 ### 可连接本地LLM的应用推荐
 #### 1. MiX Copilot
-![8.png](images%2F8.png)
+![8.png](images/8.png)
 
 **介绍**：MiX Copilot 是一款支持OpenAI和本地LLMs的PC客户端，用于自动爬取、整理和分析资料（数据都以Markdown的形式保存到本地，避免隐私泄露），支持多个Chatbot同时对话、浏览网页+使用LLMs、制作LLM工作流（包括定制Prompt、查询网页）等功能。
 
@@ -348,11 +348,11 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 **使用步骤：**
 1. 下载并安装软件
 2. 进入“设置-LLM设置”，在本地模型设置项填写服务端链接（记住端口号要一致），例如 http://127.0.0.1:8000 ，点击顶部的”更新“按钮，如果红色Tag变成绿色，说明和LLM服务端连接成功。
-![9.png](images%2F9.png)
+![9.png](images/9.png)
 3. 在顶部Tab点击“+”号，或者在浏览网页时右键点击“展示Chatbot”开启Chatbot。
-![10.png](images%2F10.png)
+![10.png](images/10.png)
 4. 在对话面板左下角选择本地LLM!
-![11.png](images%2F11.png)
+![11.png](images/11.png)
 
 #### 2. Chat with RTX
 ![img.png](images/12.png)
