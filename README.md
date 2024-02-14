@@ -139,57 +139,57 @@ RAG的切割方式和回调策略直接影响LLM的效果，特别是在处理�
 *我们推荐使用GGUF版本的量化模型，因为它可以在CPU和消费级GPU环境下单独或者混合使用。欢迎分享自己使用过不错的模型给我们*
 
 #### 1. Mixtral-8x7B-Instruct-v0.1-GGUF
-介绍：Mixtral 8x7B是一个具有开放权重的高质量稀疏专家模型 （SMoE） 混合。我们推荐使用Q3及以上版本的量化模型。
+**介绍**：Mixtral 8x7B是一个具有开放权重的高质量稀疏专家模型 （SMoE） 混合。我们推荐使用Q3及以上版本的量化模型。
 
-官网：https://mistral.ai/
+**官网：** https://mistral.ai/
 
-模型大小：8x7B
+**模型大小：** 8x7B
 
-相关语言：英文
+**相关语言：** 英文
 
-上下文长度：32K
+**上下文长度：** 32K
 
-适用于：适用于NVIDIA 3090/4090及更大显存的PC主机、拥有32GB内存及以上的M1/M2/M3 Mac
+**适用于：** 适用于NVIDIA 3090/4090及更大显存的PC主机、拥有32GB内存及以上的M1/M2/M3 Mac
 
-下载地址：
+**下载地址：**
 
 https://huggingface.co/TheBloke/Mixtral-8x7B-Instruct-v0.1-GGUF/tree/main
 
 https://modelscope.cn/models/limoncc/Mixtral-8x7B-Instruct-v0.1-GGUF/files
 
 #### 2. OpenChat 3.5 0106 
-介绍：OpenChat在24年1月份的版本，通过 C-RLFT 在Mistral 7B的基础上进行微调，在推理和中英文双语问答上有较好的表现。我们推荐使用Q4及以上量化模型。
+**介绍**：OpenChat在24年1月份的版本，通过 C-RLFT 在Mistral 7B的基础上进行微调，在推理和中英文双语问答上有较好的表现。我们推荐使用Q4及以上量化模型。
 
-官网：https://github.com/imoneoi/openchat
+**官网：** https://github.com/imoneoi/openchat
 
-模型大小：7B
+**模型大小：** 7B
 
-相关语言：中文、英文
+**相关语言：** 中文、英文
 
-上下文长度：8K
+**上下文长度：** 8K
 
-适用于：适用于大部分电脑
+**适用于：** 适用于大部分电脑
 
-下载地址：
+**下载地址：**
 
 https://huggingface.co/TheBloke/openchat-3.5-0106-GGUF
 
 https://modelscope.cn/models/fivetwin/openchat-3.5-0106-GGUF/files
 
 #### 3. OpenChat 3.5-16k 
-介绍：OpenChat在23年12月份的版本，通过 C-RLFT 在Mistral 7B的基础上进行微调，在推理和中英文双语问答上有较好的表现。我们推荐使用Q4及以上量化模型。
+**介绍**：OpenChat在23年12月份的版本，通过 C-RLFT 在Mistral 7B的基础上进行微调，在推理和中英文双语问答上有较好的表现。我们推荐使用Q4及以上量化模型。
 
-官网：https://github.com/imoneoi/openchat
+**官网：** https://github.com/imoneoi/openchat
 
-模型大小：7B
+**模型大小：** 7B
 
-相关语言：中文、英文
+**相关语言：** 中文、英文
 
-上下文长度：16K
+**上下文长度：** 16K
 
-适用于：适用于大部分电脑
+**适用于：** 适用于大部分电脑
 
-下载地址：
+**下载地址：**
 
 https://huggingface.co/TheBloke/openchat_3.5-16k-GGUF/tree/main
 
@@ -197,38 +197,38 @@ https://modelscope.cn/models/limoncc/OPENCHAT3.5-16K-GGUF/files
 
 
 #### 4. Qwen 14B
-介绍：通义千问-14B（Qwen-14B）是阿里云研发的通义千问大模型系列的140亿参数规模的模型。我们推荐使用Q5及以上量化模型。
+**介绍**：通义千问-14B（Qwen-14B）是阿里云研发的通义千问大模型系列的140亿参数规模的模型。我们推荐使用Q5及以上量化模型。
 
-官网：https://github.com/QwenLM/Qwen
+**官网：** https://github.com/QwenLM/Qwen
 
-模型大小：14B
+**模型大小：** 14B
 
-相关语言：中文
+**相关语言：** 中文
 
-上下文长度：8K
+**上下文长度：** 8K
 
-适用于：适用于NVIDIA 3080/4080及更大显存的PC主机、拥有16GB内存及以上的M1/M2/M3 Mac
+**适用于：** 适用于NVIDIA 3080/4080及更大显存的PC主机、拥有16GB内存及以上的M1/M2/M3 Mac
 
-下载地址：
+**下载地址：**
 
 https://huggingface.co/Xorbits/Qwen-14B-Chat-GGUF
 
 https://modelscope.cn/models/Xorbits/Qwen-14B-Chat-GGUF/summary
 
 #### 5. Qwen 7B
-介绍：通义千问-7B（Qwen-7B）是阿里云研发的通义千问大模型系列的70亿参数规模的模型。我们推荐使用Q4及以上量化模型。
+**介绍**：通义千问-7B（Qwen-7B）是阿里云研发的通义千问大模型系列的70亿参数规模的模型。我们推荐使用Q4及以上量化模型。
 
-官网：https://github.com/QwenLM/Qwen
+**官网：** https://github.com/QwenLM/Qwen
 
-模型大小：7B
+**模型大小：** 7B
 
-相关语言：中文
+**相关语言：** 中文
 
-上下文长度：32K
+**上下文长度：** 32K
 
-适用于：适用于大部分电脑
+**适用于：** 适用于大部分电脑
 
-下载地址：
+**下载地址：**
 
 https://huggingface.co/Xorbits/Qwen-7B-Chat-GGUF
 
@@ -238,11 +238,11 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 #### 1. LM Studio
 ![1.png](images%2F1.png)
 
-介绍：LM Studio基于LLama.cpp开发了一套友好的用户界面，支持在Windows、Mac和Linux系统上安装和使用，提供了多种语言模型，并且提供了模型搜索、下载和聊天等功能。
+**介绍**：LM Studio基于LLama.cpp开发了一套友好的用户界面，支持在Windows、Mac和Linux系统上安装和使用，提供了多种语言模型，并且提供了模型搜索、下载和聊天等功能。
 
-官网及下载地址：https://lmstudio.ai/
+**官网及下载地址**：https://lmstudio.ai/
 
-使用步骤：
+**使用步骤：**
 1. 下载并安装软件
 2. 在应用内下载模型，如果因网络等情况无法下载，可以选择存放LLM的文件夹后并在文件夹里新建一个名为“TheBloke”的文件夹，然后将下载过的模型放进“TheBloke”文件夹里。
 ![2.png](images%2F2.png)
@@ -251,13 +251,13 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 4. 如果开启服务端模式，加载模型并填写端口（例如8000），点击“Start Server”即可运行。记住，客户端和服务端的通讯必须兼容OpenAI API模式。
 ![4.png](images%2F4.png)
 
-优点：
+**优点：**
 1. 整体使用流程对普通用户友好。
 2. 可以很方便地切换模型。
 3. 可以很方便地选择CPU和GPU的混合程度。
 4. 可以很方便地切换Preset。
 
-注意事项：
+**注意事项：**
 1. 切换模型或者设置参数后一定要记得重新手动加载模型。
 2. 服务端模式下，重新更换模型或者设置参数后，有可能需要重启服务端。
 3. 暂时不支持开机启动。
@@ -267,13 +267,13 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 #### 2. llamafile
 ![5.png](images%2F5.png)
 
-介绍：llamafile将 llama.cpp 与 Cosmopolitan Libc 组合成一个框架，将 LLMs 的所有复杂性压缩为在大多数计算机上本地运行的单个文件可执行文件，支持Windows、Mac和Linux。
+**介绍**：llamafile将 llama.cpp 与 Cosmopolitan Libc 组合成一个框架，将 LLMs 的所有复杂性压缩为在大多数计算机上本地运行的单个文件可执行文件，支持Windows、Mac和Linux。
 
-官网：https://github.com/Mozilla-Ocho/llamafile
+**官网：** https://github.com/Mozilla-Ocho/llamafile
 
-下载地址：https://github.com/Mozilla-Ocho/llamafile/releases/
+**下载地址：** https://github.com/Mozilla-Ocho/llamafile/releases/
 
-使用步骤：
+**使用步骤：**
 1. 下载文件
 2. 如果你是macOS或者Linux用户，打开计算机终端，授予计算机执行此新文件的权限`chmod +x llava-v1.5-7b-q4.llamafile`，接着运行该llama文件`./llava-v1.5-7b-q4.llamafile -ngl 9999`。（记住先进入对应的文件夹再输入指令，“llava-v1.5-7b-q4.llamafile”是你下载的文件名字）
 3. 如果你是Windows用户，可以在文件末尾添加“.exe”来重命名该文件。
@@ -281,12 +281,12 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 5. 聊天完毕后，返回终端并点击 `Control-C` 关闭 llamafile，或者直接关闭cmd窗口。
 6. 另外，开启llamafile后会自动开启服务端模式，在客户端填写 http://127.0.0.1:8080/ 即可通讯。记住，客户端和服务端的通讯必须兼容OpenAI API模式。
 
-优点：
+**优点：**
 1. 下载文件后即可直接使用。
 2. 开启应用后直接进入服务端模式。
 3. 可以通过命令行方式设置的方式开机启动应用和服务端模式。
 
-注意事项：
+**注意事项：**
 1. 目前llamafile的一部分功能依赖于CLI（Command Line Interface），更适合拥有编程能力的用户使用。
 2. 由于Windows对可执行文件大小有4GB的限制，所以大部分从网上下载的llamafiles无法使用，需要自己重新打包和设置llamafile，详情请看： https://github.com/Mozilla-Ocho/llamafile 。
 3. 导入本地已经下载好的模型，需要重新打包另外一个llamafile。
@@ -294,24 +294,24 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 5. 如果你的系统是Windows/Linux，处理器需要支持AVX2。
 
 #### 3. Ollama
-介绍：Ollama 是一个基于LLama.cpp的轻量级、可扩展的框架，用于在本地构建和运行语言模型。目前支持Mac和Linux，Windows版本暂未提供。
+**介绍**：Ollama 是一个基于LLama.cpp的轻量级、可扩展的框架，用于在本地构建和运行语言模型。目前支持Mac和Linux，Windows版本暂未提供。
 
-官网及下载地址：https://ollama.com/
+**官网及下载地址**：https://ollama.com/
 
-使用步骤：
+**使用步骤：**
 1. 下载并打开执行文件
 2. 成功安装后会提示在cmd内运行模型，例如`ollama run mistral`（如果没有下载过模型会自动下载模型）。
 ![6.png](images%2F6.png)
 ![7.png](images%2F7.png)
 3. 在cmd中开始对话
 
-优点：
+**优点：**
 1. 支持开机启动。
 2. 开启应用后直接进入服务端模式。
 3. 可以通过命令行直接下载模型。
 4. 可以通过命令行直接切换模型。
 
-注意事项：
+**注意事项：**
 1. 目前Ollama依赖于CLI（Command Line Interface），更适合拥有编程能力的用户使用。
 2. 导入本地已经下载好的模型需要命令行导入，详情请看： https://github.com/ollama/ollama 。
 3. 服务端模式跟OpenAI API不一样，需要客户端兼容并选择对应的模型。
@@ -323,13 +323,13 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 #### 1. MiX Copilot
 ![8.png](images%2F8.png)
 
-介绍：MiX Copilot 是一款支持OpenAI和本地LLMs的PC客户端，用于自动爬取、整理和分析资料（数据都以Markdown的形式保存到本地，避免隐私泄露），支持多个Chatbot同时对话、浏览网页+使用LLMs、制作LLM工作流（包括定制Prompt、查询网页）等功能。目前MiX Copilot 支持Windows和MacOS客户端，支持中英文语言。
+**介绍**：MiX Copilot 是一款支持OpenAI和本地LLMs的PC客户端，用于自动爬取、整理和分析资料（数据都以Markdown的形式保存到本地，避免隐私泄露），支持多个Chatbot同时对话、浏览网页+使用LLMs、制作LLM工作流（包括定制Prompt、查询网页）等功能。目前MiX Copilot 支持Windows和MacOS客户端，支持中英文语言。
 
-官网及下载地址：https://www.mix-copilot.com/
+**官网及下载地址**：https://www.mix-copilot.com/
 
 使用教程：https://hci-top.notion.site/MiX-Copilot-Tutorial-English-2c95481c5d4c4c818f40bd04c299b7ea
 
-使用步骤：
+**使用步骤：**
 1. 下载并安装软件
 2. 进入“设置-LLM设置”，在本地模型设置项填写服务端链接（记住端口号要一致），例如 http://127.0.0.1:8000 ，点击顶部的”更新“按钮，如果红色Tag变成绿色，说明和LLM服务端连接成功。
 ![9.png](images%2F9.png)
@@ -340,9 +340,9 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 
 #### 2. Chat with RTX
 
-介绍：Chat With RTX 是一款**演示**应用程序，可以将自己的内容（文档、笔记、视频或其他数据）与本地LLM进行交互。Chat With RTX集成了检索增强生成 (RAG)、TensorRT-LLM 和 RTX 加速，用户可以查询自定义聊天机器人以快速获得上下文相关的答案。
+**介绍**：Chat With RTX 是一款**演示**应用程序，可以将自己的内容（文档、笔记、视频或其他数据）与本地LLM进行交互。Chat With RTX集成了检索增强生成 (RAG)、TensorRT-LLM 和 RTX 加速，用户可以查询自定义聊天机器人以快速获得上下文相关的答案。Chat with RTX 支持各种文件格式，包括文本、pdf、doc/docx 和 xml。只需将应用程序指向包含文件的文件夹，它就会在几秒钟内将它们加载到库中。此外，用户可以提供 YouTube 播放列表的网址，应用程序将加载播放列表中视频的转录，然后查询它们涵盖的内容。
 
-官网及下载地址：https://www.nvidia.com/en-us/ai-on-rtx/chat-with-rtx-generative-ai/
+**官网及下载地址**：https://www.nvidia.com/en-us/ai-on-rtx/chat-with-rtx-generative-ai/
 #### 3. 待补充
 *目前全球范围内可以兼容本地LLM的客户端极少，欢迎各位推荐或自荐*
 
