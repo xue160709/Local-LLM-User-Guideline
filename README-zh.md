@@ -1,4 +1,4 @@
-[Englisht](README.md) &nbsp;&nbsp;&nbsp; [中文版](README-zh.md)
+[English](README.md) &nbsp;&nbsp; [中文版](README-zh.md)
 # 本地LLM交互指南
 ## 1. 背景介绍
 

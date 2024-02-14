@@ -1,4 +1,4 @@
-[Englisht](README.md) &nbsp;&nbsp;&nbsp; [中文版](README-zh.md)
+[English](README.md) &nbsp;&nbsp; [中文版](README-zh.md)
 # Local LLM Interaction Guide  
 ## 1. Background  
   
