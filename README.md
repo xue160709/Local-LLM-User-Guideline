@@ -339,10 +339,16 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 ![11.png](images%2F11.png)
 
 #### 2. Chat with RTX
-
+![img.png](images/12.png)
 **介绍**：Chat With RTX 是一款**演示**应用程序，可以将自己的内容（文档、笔记、视频或其他数据）与本地LLM进行交互。Chat With RTX集成了检索增强生成 (RAG)、TensorRT-LLM 和 RTX 加速，用户可以查询自定义聊天机器人以快速获得上下文相关的答案。Chat with RTX 支持各种文件格式，包括文本、pdf、doc/docx 和 xml。只需将应用程序指向包含文件的文件夹，它就会在几秒钟内将它们加载到库中。此外，用户可以提供 YouTube 播放列表的网址，应用程序将加载播放列表中视频的转录，然后查询它们涵盖的内容。
 
 **官网及下载地址**：https://www.nvidia.com/en-us/ai-on-rtx/chat-with-rtx-generative-ai/
+
+**注意事项：**
+1. 目前Chat with RTX是一个演示应用程序。
+2. 目前Chat with RTX只支持Windows。
+3. 目前Chat with RTX要求NVIDIA GeForce™ RTX 30 或 40 系列 GPU 或 NVIDIA RTX™ Ampere 或 Ada Generation GPU，具有至少 8GB VRAM 和 16GB RAM。
+
 #### 3. 待补充
 *目前全球范围内可以兼容本地LLM的客户端极少，欢迎各位推荐或自荐*
 
