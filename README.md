@@ -234,7 +234,7 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 
 ### 如何开启本地LLM
 #### 1. LM Studio
-![[Pasted image 20240214101116.png]]
+![1.png](images%2F1.png)
 
 介绍：LM Studio基于LLama.cpp开发了一套友好的用户界面，支持在Windows、Mac和Linux系统上安装和使用，提供了多种语言模型，并且提供了模型搜索、下载和聊天等功能。
 
