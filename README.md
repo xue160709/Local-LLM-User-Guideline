@@ -1,390 +1,391 @@
-# 本地LLM交互指南
-## 1. 背景介绍
-
-### 1.1 什么是LLMs？
-LLMs，即大型语言模型（Large Language Models），是一种基于人工智能和机器学习技术构建的先进模型，旨在理解和生成自然语言文本。这些模型通过分析和学习海量的文本数据，掌握语言的结构、语法、语义和上下文等复杂特性，从而能够执行各种语言相关的任务。LLM的能力包括但不限于文本生成、问答、文本摘要、翻译、情感分析等。
-
-LLMs例如GPT、LLama、Mistral系列等，通过深度学习的技术架构，如Transformer，使得这些模型能够捕捉到文本之间深层次的关联和含义。模型首先在广泛的数据集上进行预训练，学习语言的一般特征和模式，然后可以针对特定的任务或领域进行微调，以提高其在特定应用中的表现。
-
-预训练阶段让LLMs掌握了大量的语言知识和世界知识，而微调阶段则使模型能够在特定任务上达到更高的性能。这种训练方法赋予了LLMs在处理各种语言任务时的灵活性和适应性，能够为用户提供准确、多样化的信息和服务。
-
-### 1.2 LLMs和应用程序的差异
-
-#### 开放性
-**LLMs：** 通过深度学习的预训练和微调过程，LLMs掌握了从海量互联网文本中获得的广泛知识，使其能够理解和生成包括文本、图片、音频、视频、3D素材在内的多种内容类型。这种能力让LLM在处理各种主题和知识领域时展现出卓越的多样化信息处理能力。
-
-**应用程序：** 应用程序则是为满足特定需求而设计，如社交互动、新闻获取、电子商务等，其开放性和内容多样性通常不如LLMs。每个应用都围绕其核心功能构建，提供用户界面和体验优化，但用户访问的信息和服务范围受限于应用的设计目的和功能界定。
-
-#### 准确性
-**LLMs：** LLMs通过分析和学习海量文本数据，掌握语言的结构、语义和上下文，具备广泛主题和任务的文本生成能力。然而，这些模型的准确性不仅依赖于丰富多样的训练数据和先进的模型架构，还面临着更新滞后和“幻觉”问题的挑战。在处理专业或最新信息时，LLMs可能产生无事实依据的内容，特别是在缺乏足够上下文或信息迅速变化的情况下。因此，在使用这些模型生成的信息进行决策和分析时，建议进行额外的验证，以提高准确性与可靠性。
-
-**应用程序：** 应用程序中的信息准确性高度依赖于内容的策划和管理，这通常涉及专业人员或团队的主动选择和提供。例如，在专业领域如医疗健康、金融投资等应用中，开发者和专家会投入大量资源来确保所提供信息的准确性、可靠性和及时更新。这种方法虽然可以提高特定领域内信息的质量，但同时也意味着用户接触到的信息范围受限于这些专业团队的知识广度和选择。因此，虽然应用程序在特定领域内可能提供高度准确的信息，它们的内容覆盖和视角受到了人为选择和专业领域限制的约束。
-
-#### 可预期性
-**LLMs：** LLMs的可预期性较低，因为它们生成的回答可能因训练数据的多样性和模型理解的复杂性而变化。用户可能会在没有明确指示的情况下收到多种可能的答案，或在特定情境下获得意料之外的回应，更差的情况是无法进行下一轮交互。这种不确定性源自于模型的设计和操作机制，尤其是在处理模糊查询或复杂问题时更为明显。
-
-**应用程序：** 应用程序通常提供更高的可预期性，因为它们是为了满足特定的需求和目的而设计，其功能、操作流程和用户界面都旨在提供一致和可预测的用户体验。应用程序通过明确的用户指令和固定的交互逻辑来减少操作过程中的不确定性，使用户能够预见到自己的操作将产生何种结果。
-
-#### 可用性
-**LLMs：** LLMs当前存在着大量可用性问题，除了上面提到的幻觉问题，还存在且不限于以下问题：
-1. **答非所问：** LLMs在处理复杂或模糊的查询时，有时可能会提供与用户期望不符的答案。这种现象通常是由于模型对问题的理解不足或错误解释查询的意图所致。尽管模型训练涵盖了大量数据，以提高对自然语言的理解能力，但在理解特定上下文或领域特定语言时，仍可能遇到困难。
-2. **响应时长：** 用户在与LLMs进行交互时，尤其是在进行复杂的生成任务或处理大量数据请求时，可能会遇到较长的响应时间。这不仅影响用户体验，也限制了LLMs在实时交互场景中的应用。响应时间的延长主要由于模型的计算需求高和服务器负载大。
-3. **处理能力的限制：** 尽管LLMs的理论能力很强，但在实际应用中，其处理能力受到硬件资源、算法效率和可用性的制约。例如，大规模并发请求可能导致性能下降，特别是在资源受限的环境中。此外，LLMs在处理长篇文本或需要深入理解的复杂任务时，效率和准确性可能会降低。
-4. **自我更新的局限：** LLMs通常在固定的数据集上进行预训练，这意味着它们在训练之后的知识是静态的。尽管可以通过周期性的重新训练来更新模型，但是这种方法可能不足以实时捕捉最新信息或趋势，从而在一定程度上限制了模型在快速变化领域（例如新闻、科技等）的应用效果。
-
-**应用程序：** 由于软件开发和设计领域长期以来的积累与创新，多数应用程序已经达到了高度的用户友好性和稳定性。设计师和开发者能够依托成熟的平台和框架来构建应用，同时，广泛采用的用户体验设计原则确保了应用能够满足用户的需求和期望。此外，通过持续的用户反馈和迭代开发，应用程序能够及时修复Bug，优化性能，从而提高用户满意度和应用的整体可用性。
-
-### 1.3 开源LLMs有哪些优缺点？
-#### 优点
-1. **灵活性和适配性：** 开源LLMs提供了不同尺寸的模型，使它们能够部署在各种设备上，从小型设备如树莓派和手机，到个人电脑乃至服务器集群。
-2. **减少依赖：** 使用开源LLMs可以在一定程度上减少对特定供应商，如OpenAI的依赖。这不仅提高了技术的可访问性，还促进了创新和自主性。
-3. **隐私保护：** 开源LLMs允许用户在本地或私有云环境中部署和使用模型，这有助于减少数据泄露的风险，为处理敏感或私有数据的应用提供了更高的安全性。
-4. **可定制性：** 开源模型可以根据特定的需求进行微调，使用户能够优化模型以适应特定的任务或数据集，从而提高了模型的效果和准确性。
-5. **社区支持：** 开源LLMs通常受益于活跃的开发者和研究社区的支持。这样的社区不仅提供技术支持和共享解决方案，还促进了新功能、优化和应用场景的快速创新。
-6. **高透明度：** 开源模型提供了算法和数据处理流程的可见性，使得技术用户和开发者能够审查模型的工作原理。
-
-#### 缺点
-1. **基础模型和数据集的限制：** 开源LLMs的性能上下限很大程度上取决于背后的基础模型和数据集。Meta、Mistral等厂商提供的模型虽然强大，但可能不适合所有类型的任务，特别是那些需要高度专业化知识的领域。
-2. **资源和技术门槛：** 尽管开源LLMs提供了极大的灵活性，但部署和维护这些模型需要相当的硬件资源和技术专长。对于缺乏这些资源或技术能力的个人或小团队来说，这可能是一个挑战。
-3. **缺乏统一标准：** 开源社区中存在多种LLMs，它们可能采用不同的架构、训练数据集和接口。这种多样性虽然促进了创新，但也给用户选择合适模型和工具带来了复杂性。
-4. **稳定性问题：** 本地部署的开源模型可能会遇到硬件限制和软件兼容性问题，导致运行不稳定。这种不稳定性可能会影响到模型的可靠性和用户体验。
-5. **处理速度问题：** 如果仅使用CPU进行模型推理，尤其是在处理大型模型或复杂任务时，速度可能非常慢。这不仅延长了处理时间，也可能限制模型在实时或要求高响应速度的应用场景中的使用。
-6. **输出质量波动与内容生成的可控性：** 开源LLMs在处理特定语言类型或复杂、边缘案例时，可能会遇到输出质量的波动，有时产生不相关或无意义的回答。同时，当需要生成敏感或要求高度准确的内容时，这些模型可能难以精确控制输出的质量和方向，特别是在缺乏细致的监督和定制化微调的情况下，这可能导致输出内容不达标或不满足特定的期望。
-
-
-### 1.4 线上和本地LLMs的区别
-*这里的LLMs特指Llama、Mistral、GLM等开源模型*
-#### 可用性
-**线上LLMs：** 线上部署的LLMs提供即时访问和高可用性，这得益于SaaS（软件即服务）提供商在云服务器上预配置好的LLM和RAG（检索增强的生成模型）环境。用户无需担心硬件配置或安装过程，可以立即开始使用这些模型进行文本生成、问答等任务。这种部署方式特别适合没有专业技术背景的用户或需要快速部署解决方案的企业。
-
-**本地LLMs：** 本地部署的LLMs要求用户具备一定的技术知识，包括安装、配置和优化模型的能力。LLM的推理性能和速度直接受限于个人或组织的硬件配置，如处理器、内存和存储空间等。此外，虽然本地部署为用户提供了更大的控制空间，但缺少像RAG这样的高级功能封装，用户可能需要自己进行额外的开发工作。
-
-#### 成本
-**线上LLMs：** 对个人用户而言，线上LLMs服务的按需计费模式提供了极大的灵活性和入门门槛较低的优势。个人用户可以根据自己的实际需求和使用频率选择合适的服务计划，避免了高昂的初始投资。这对于那些只是偶尔需要使用语言模型进行特定项目或研究的用户尤其有利。然而，如果个人用户频繁使用这些服务进行大量数据处理，成本可能会逐渐累积，特别是当使用高级功能或大规模数据集时。对于那些需要长期、持续使用语言模型服务的个人用户，定期评估总成本是很重要的。
-
-**本地LLMs：** 对于个人用户来说，选择本地部署LLMs意味着需要一次性投资于高性能的计算硬件。尽管这可能增加一些用户的经济成本，但它提供了长期的成本效益，尤其是对于那些有持续高强度使用需求的用户。本地部署避免了重复的服务费用，一旦设备投入使用，除了可能的维护和升级外，额外的运营成本相对较低。此外，个人用户通过本地部署能够获得更大的控制权和自定义能力，这可能对于研究人员或开发者特别有价值。然而，需要注意的是，本地部署也意味着用户必须具备一定的技术能力来配置和维护系统。
-
-
-#### 隐私性
-**线上LLMs：** 当使用线上LLMs时，用户的数据需要传输到云服务器上进行处理，这引发了对数据隐私和安全的考量。虽然许多SaaS提供商采取了强有力的数据保护措施，并承诺保护用户数据不被滥用或泄露，但这一过程仍然需要用户对提供商的数据处理和隐私政策有一定的信任基础。
-
-**本地LLMs：** 相对于线上模型，本地部署的LLMs在隐私保护方面提供了更高级别的安全性，主要因为数据处理在用户的私有设备或内部服务器上完成，无需数据外传。这种部署方式让用户对数据的控制权大大增强，降低了数据泄露的风险。
-
-#### 依赖性和控制权
-**线上LLMs：** 使用线上服务，用户依赖服务提供商确保服务的可用性和性能。这种模式简化了使用流程，允许用户专注于模型的应用而非其维护。然而，这也意味着在系统提示、上下文管理及模型响应定制方面，用户的直接控制能力有所限制。尽管线上服务提供一定程度的配置选项，但它们可能不足以满足所有特定需求，特别是在需要高度定制化输出的场景中。
-
-**本地LLMs：** 本地部署的模型让用户享有更高的控制权，包括对数据处理、模型配置和系统安全的管理。用户可以根据需要深度定制系统提示和上下文处理策略，这在特定应用场景下可能非常重要。然而，这种控制权和灵活性的增加伴随着更高的技术要求和可能的初期设置复杂性。尽管本地部署允许高度定制，但它也要求用户具备相应的技术能力来实现这些定制化的解决方案。
-
-#### 透明度
-**线上LLMs：** 线上LLMs服务由第三方提供，可能会在模型的工作原理和数据处理方式上给某些用户带来透明度的担忧。服务提供商通常会努力提供模型训练、数据处理和隐私政策等方面的文档，旨在提高透明度。然而，由于商业保密和操作复杂性，用户可能无法获得模型内部机制的完全细节。这要求用户信任服务提供商，并依赖其提供的信息和控制措施来保障数据安全和隐私。
-
-**本地LLMs：** 本地部署的LLMs允许用户直接访问模型，提供了更高程度的透明度。用户可以自行检查、修改和优化模型，从而深入理解其工作原理并根据需求调整其行为。这种直接控制确保了对模型的完全理解和定制能力，特别适合对数据安全、隐私保护有高要求或需遵循特定法规的组织。然而，这也意味着用户需要承担更大的责任，包括维护模型的透明度和确保其符合伦理和法律标准。
-
-#### 离线
-**线上LLMs：** 无法使用
-
-**本地LLMs：** 可正常使用
-### 1.5 使用线上LLMs存在哪些问题？
-在使用线上LLMs时，我们面临着多个层面的挑战，这些问题从个人数据隐私到模型性能与成本，再到内容的完整性以及检索增强的生成模型（RAG）策略的选择和应用，构成了一系列需要用户和服务提供商共同关注的关键问题。
-
-#### 问题1：个人数据隐私
-在线上LLMs的使用过程中，个人数据的隐私成为了一个显著的担忧点。用户与LLM的互动，以及上传的文档，都可能被服务提供商收集用于模型的微调和优化。
-
-#### 问题2：模型性能与成本
-服务提供商为了平衡成本和性能，可能会使用不同规模的LLM。较小的模型（如7B或13B参数）虽然可以减少计算资源消耗，提高响应速度，但其推理能力可能不足以处理复杂的查询或生成高质量的文本。用户在选择服务时，可能难以获悉所使用的模型规模和性能，导致实际应用中的效果与预期存在差异。这种不透明性可能会影响用户的使用体验和满意度。
-
-#### 问题3：内容完整性
-针对长文档的处理，存在一个问题是LLM是否能够完整地获取和理解整个文档内容。由于技术限制，一些服务可能只会处理文档的一部分内容，如仅分析前几百个词。这种处理方式可能会导致LLM遗漏关键信息，从而影响到生成内容的准确性和相关性。用户可能无法了解其提交的内容是否被完整处理，进而对结果的可靠性产生疑问。
-
-#### 问题4：检索增强的生成模型（RAG）策略
-RAG的切割方式和回调策略直接影响LLM的效果，特别是在处理需要广泛知识检索的查询时。不同的切割方法和回调策略决定了LLM访问和整合信息的方式，从而影响到最终生成的答案的准确性和完整性。如果这些策略没有恰当选择或优化，LLM可能无法看到或利用相关的信息来生成最佳的回答。用户通常无法控制或知晓这些内部处理细节，这增加了结果不确定性。
-
-## 2. 哪些理论场景适合使用本地开源LLMs？
-*此处标注理论场景是因为当前开源LLMs存在较多实际问题，但这些问题将被逐步克服。*
-
-#### 1. 我的业务场景是否存在大容量、高频的数据请求？
-如果你每天需都需要分析和处理大量文档，而一篇文档大概需要4000Token，LLM一轮输出400 Token，那么10轮交互下来最少需要5W Token，20篇那就消耗了100W Token；如果需要跟之前的文档进行交叉比较和深度分析，假设库里有1000篇文章，那一天需要消耗10亿Token（前提是没有其他技术的加持）。
-
-**理论场景：** 个人知识库场景、多文档自动分析场景......
-
-#### 2. 我的业务场景是否涉及多重信息加工甚至多任务？
-在多任务和多重信息加工领域，涉及到的操作和处理逻辑非常复杂，尤其是在电脑上进行的活动。这些活动不仅仅是简单的执行命令，更多的是涉及到对用户意图的判断、数据之间的传输和交互，以及如何根据当前的上下文来做出响应。这里面涉及到的Token消耗主要是因为这些操作需要大量的计算资源来处理和响应用户的需求。
-
-在这个过程中，每一个步骤所需的系统提示（System Prompt）、上下文对话的逻辑处理等，都需要根据具体情况进行个性化和差异化的设计。这种情况下的“千人千面”，是指系统必须能够根据每个用户的具体需求和上下文来提供定制化的服务。这与基于推荐算法的“千人千面”有着本质的差异。本质上的差异在于：
-1. **处理的动态性与静态性：** 多任务和多重信息加工领域的处理是动态的，依赖于当前的上下文和用户的即时需求，而基于推荐算法的处理更多是静态的，依赖于用户的历史数据。
-2. **个性化程度：** 虽然两者都追求“千人千面”，但多任务处理更加注重在特定情境下对用户需求的精准响应，推荐算法更多是依据历史数据或者类似用户的数据进行的一般性预测。
-3. **交互性：** 多任务处理涉及到与用户的实时交互，而推荐算法则更多是一种单向的内容推送。
-
-*请注意，这个本质的差异决定了本地LLMs是解决多重信息加工甚至多任务的唯一解决办法，但它有可能是一个闭源LLM。*
-
-**理论场景：** 撰写报告场景、依赖操作系统能力的交互场景......
-
-#### 3. 我的业务场景是否涉及到个人隐私或敏感数据？
-在探讨目标设定、日记撰写、财务管理、情感交流等个人化领域时，我们不得不面对一个现实问题：这些活动往往涉及到大量的个人数据处理，而这些数据中包含了用户的敏感信息。比如，在进行日记撰写时，用户可能会记录下自己的私密想法和感受；在财务管理过程中，用户需要处理自己的收入、支出等财务信息；情感交流时，用户可能会分享自己的心理状态和情绪体验。这些活动中生成和处理的数据，都属于高度敏感的个人信息，一旦被泄露，可能会给用户造成不可挽回的伤害。在这样的背景下，本地开源LLMs的应用就显得尤为重要和必要。
-
-**理论场景：** 个人目标设定与跟踪场景、私密情感交流场景、日记撰写与情感分析场景......
-
-#### 4. 我的业务场景是否需要低护栏的大模型？
-在当前的技术环境中，线上LLM在提供服务的同时，不得不面对各种法律法规和伦理道德的约束。这些约束往往通过增设“护栏”来实施，目的是为了防止模型生成不当内容，如误导信息、侵犯隐私、散播仇恨言论等。然而，这些护栏在一定程度上限制了LLM的功能和知识的完整使用，尤其是在需要较高自由度的应用场景中，如角色扮演、创意写作等。在这些场景下，内容的过滤和限制可能会阻碍创意的发挥和用户体验的深化。
-
-在此背景下，本地部署的LLMs提供了一种解决方案。通过本地部署，用户可以根据自己的需求和责任范围，调整内容过滤的标准，既能规避法律风险，又能保留更高的创意自由度和个性化服务。这种灵活性在某些业务场景中尤为重要，能够为用户提供更加丰富和深入的互动体验。
-
-**理论场景：** 部分领域的咨询场景、角色扮演场景 
-
-## 3. 开箱即用的本地LLMs
-
-得益于Meta、Mistral和众多开发者提供的开源LLMs，以及Llama.cpp这个开源项目，目前我们可以以很低的成本使用开源LLMs，接下来我推荐一些开箱即用的后端和客户端来帮助各位开启本地LLMs之旅。
-
-### 本地LLMs推荐及下载
-*我们推荐使用GGUF版本的量化模型，因为它可以在CPU和消费级GPU环境下单独或者混合使用。欢迎分享自己使用过不错的模型给我们*
-
-#### 1. Mixtral-8x7B-Instruct-v0.1-GGUF
-**介绍**：Mixtral 8x7B是一个具有开放权重的高质量稀疏专家模型 （SMoE） 混合。我们推荐使用Q3及以上版本的量化模型。
-
-**官网：** https://mistral.ai/
-
-**模型大小：** 8x7B
-
-**相关语言：** 英文
-
-**上下文长度：** 32K
-
-**适用于：** 适用于NVIDIA 3090/4090及更大显存的PC主机、拥有32GB内存及以上的M1/M2/M3 Mac
-
-**下载地址：**
-
-https://huggingface.co/TheBloke/Mixtral-8x7B-Instruct-v0.1-GGUF/tree/main
-
-https://modelscope.cn/models/limoncc/Mixtral-8x7B-Instruct-v0.1-GGUF/files
-
-#### 2. OpenChat 3.5 0106 
-**介绍**：OpenChat在24年1月份的版本，通过 C-RLFT 在Mistral 7B的基础上进行微调，在推理和中英文双语问答上有较好的表现。我们推荐使用Q4及以上量化模型。
-
-**官网：** https://github.com/imoneoi/openchat
-
-**模型大小：** 7B
-
-**相关语言：** 中文、英文
-
-**上下文长度：** 8K
-
-**适用于：** 适用于大部分电脑
-
-**下载地址：**
-
-https://huggingface.co/TheBloke/openchat-3.5-0106-GGUF
-
-https://modelscope.cn/models/fivetwin/openchat-3.5-0106-GGUF/files
-
-#### 3. OpenChat 3.5-16k 
-**介绍**：OpenChat在23年12月份的版本，通过 C-RLFT 在Mistral 7B的基础上进行微调，在推理和中英文双语问答上有较好的表现。我们推荐使用Q4及以上量化模型。
-
-**官网：** https://github.com/imoneoi/openchat
-
-**模型大小：** 7B
-
-**相关语言：** 中文、英文
-
-**上下文长度：** 16K
-
-**适用于：** 适用于大部分电脑
-
-**下载地址：**
-
-https://huggingface.co/TheBloke/openchat_3.5-16k-GGUF/tree/main
-
-https://modelscope.cn/models/limoncc/OPENCHAT3.5-16K-GGUF/files
-
-
-#### 4. Qwen 14B
-**介绍**：通义千问-14B（Qwen-14B）是阿里云研发的通义千问大模型系列的140亿参数规模的模型。我们推荐使用Q5及以上量化模型。
-
-**官网：** https://github.com/QwenLM/Qwen
-
-**模型大小：** 14B
-
-**相关语言：** 中文
-
-**上下文长度：** 8K
-
-**适用于：** 适用于NVIDIA 3080/4080及更大显存的PC主机、拥有16GB内存及以上的M1/M2/M3 Mac
-
-**下载地址：**
-
-https://huggingface.co/Xorbits/Qwen-14B-Chat-GGUF
-
-https://modelscope.cn/models/Xorbits/Qwen-14B-Chat-GGUF/summary
-
-#### 5. Qwen 7B
-**介绍**：通义千问-7B（Qwen-7B）是阿里云研发的通义千问大模型系列的70亿参数规模的模型。我们推荐使用Q4及以上量化模型。
-
-**官网：** https://github.com/QwenLM/Qwen
-
-**模型大小：** 7B
-
-**相关语言：** 中文
-
-**上下文长度：** 32K
-
-**适用于：** 适用于大部分电脑
-
-**下载地址：**
-
-https://huggingface.co/Xorbits/Qwen-7B-Chat-GGUF
-
-https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
-
-### 如何开启本地LLM
-#### 1. LM Studio
-![1.png](images/1.png)
-
-**介绍**：LM Studio基于LLama.cpp开发了一套友好的用户界面，支持在Windows、Mac和Linux系统上安装和使用，提供了多种语言模型，并且提供了模型搜索、下载和聊天等功能。
-
-**官网及下载地址**：https://lmstudio.ai/
-
-**操作系统：** Windows、Mac、Linux
-
-**相关语言：** 英文
-
-**使用步骤：**
-1. 下载并安装软件
-2. 在应用内下载模型，如果因网络等情况无法下载，可以选择存放LLM的文件夹后并在文件夹里新建一个名为“TheBloke”的文件夹，然后将下载过的模型放进“TheBloke”文件夹里。
-![2.png](images/2.png)
-3. 点击”Select a model to load“选择模型即可开启对话模式，也可以根据自己电脑和模型选择对应的“GPU Acceleration”和“Context Length”，重新加载模型。（如果自己的电脑配置一般，建议不勾选”GPU Offload“，以及“Context Length”设置越大，等待时间会越长，更详细的介绍请看指南第四部分）
-![3.png](images/3.png)
-4. 如果开启服务端模式，加载模型并填写端口（例如8000），点击“Start Server”即可运行。记住，客户端和服务端的通讯必须兼容OpenAI API模式。
-![4.png](images/4.png)
-
-**优点：**
-1. 整体使用流程对普通用户友好。
-2. 可以很方便地切换模型。
-3. 可以很方便地选择CPU和GPU的混合程度。
-4. 可以很方便地切换Preset。
-
-**注意事项：**
-1. 切换模型或者设置参数后一定要记得重新手动加载模型。
-2. 服务端模式下，重新更换模型或者设置参数后，有可能需要重启服务端。
-3. 暂时不支持开机启动。
-4. 暂时不支持自动进入服务端模式。
-5. 如果你的系统是Windows/Linux，处理器需要支持AVX2。
-
-#### 2. llamafile
-![5.png](images/5.png)
-
-**介绍**：llamafile将 llama.cpp 与 Cosmopolitan Libc 组合成一个框架，将 LLMs 的所有复杂性压缩为在大多数计算机上本地运行的单个文件可执行文件。
-
-**官网：** https://github.com/Mozilla-Ocho/llamafile
-
-**下载地址：** https://github.com/Mozilla-Ocho/llamafile/releases/
-
-**操作系统：** Windows、Mac、Linux
-
-**相关语言：** 英文
-
-**使用步骤：**
-1. 下载文件
-2. 如果你是macOS或者Linux用户，打开计算机终端，授予计算机执行此新文件的权限`chmod +x llava-v1.5-7b-q4.llamafile`，接着运行该llama文件`./llava-v1.5-7b-q4.llamafile -ngl 9999`。（记住先进入对应的文件夹再输入指令，“llava-v1.5-7b-q4.llamafile”是你下载的文件名字）
-3. 如果你是Windows用户，可以在文件末尾添加“.exe”来重命名该文件。
-4. 你的浏览器应该自动打开并显示聊天界面。 （如果没有，只需打开浏览器并将其指向 http://127.0.0.1:8080/  
-5. 聊天完毕后，返回终端并点击 `Control-C` 关闭 llamafile，或者直接关闭cmd窗口。
-6. 另外，开启llamafile后会自动开启服务端模式，在客户端填写 http://127.0.0.1:8080/ 即可通讯。记住，客户端和服务端的通讯必须兼容OpenAI API模式。
-
-**优点：**
-1. 下载文件后即可直接使用。
-2. 开启应用后直接进入服务端模式。
-3. 可以通过命令行方式设置的方式开机启动应用和服务端模式。
-
-**注意事项：**
-1. 目前llamafile的一部分功能依赖于CLI（Command Line Interface），更适合拥有编程能力的用户使用。
-2. 由于Windows对可执行文件大小有4GB的限制，所以大部分从网上下载的llamafiles无法使用，需要自己重新打包和设置llamafile，详情请看： https://github.com/Mozilla-Ocho/llamafile 。
-3. 导入本地已经下载好的模型，需要重新打包另外一个llamafile。
-4. 使用过程中更换模型约等于打开另外一个文件，操作起来不怎么方便。
-5. 如果你的系统是Windows/Linux，处理器需要支持AVX2。
-
-#### 3. Ollama
-**介绍**：Ollama 是一个基于LLama.cpp的轻量级、可扩展的框架，用于在本地构建和运行语言模型。
-
-**官网及下载地址**：https://ollama.com/
-
-**操作系统：** Mac、Linux
-
-**相关语言：** 英文
-
-**使用步骤：**
-1. 下载并打开执行文件
-2. 成功安装后会提示在cmd内运行模型，例如`ollama run mistral`（如果没有下载过模型会自动下载模型）。
-![6.png](images/6.png)
-![7.png](images/7.png)
-3. 在cmd中开始对话
-
-**优点：**
-1. 支持开机启动。
-2. 开启应用后直接进入服务端模式。
-3. 可以通过命令行直接下载模型。
-4. 可以通过命令行直接切换模型。
-
-**注意事项：**
-1. 目前Ollama依赖于CLI（Command Line Interface），更适合拥有编程能力的用户使用。
-2. 导入本地已经下载好的模型需要命令行导入，详情请看： https://github.com/ollama/ollama 。
-3. 服务端模式跟OpenAI API不一样，需要客户端兼容并选择对应的模型。
-4. 如果你的系统是Linux，处理器需要支持AVX2。
-
-*欢迎分享自己使用过不错的LLM后端给我们*
-
-### 可连接本地LLM的应用推荐
-#### 1. MiX Copilot
-![8.png](images/8.png)
-
-**介绍**：MiX Copilot 是一款支持OpenAI和本地LLMs的PC客户端，用于自动爬取、整理和分析资料（数据都以Markdown的形式保存到本地，避免隐私泄露），支持多个Chatbot同时对话、浏览网页+使用LLMs、制作LLM工作流（包括定制Prompt、查询网页）等功能。
-
-**官网及下载地址**：https://www.mix-copilot.com/
-
-**操作系统：** Windows、Mac
-
-**相关语言：** 中文、英文
-
-**使用教程：** https://hci-top.notion.site/MiX-Copilot-Tutorial-English-2c95481c5d4c4c818f40bd04c299b7ea
-
-**使用步骤：**
-1. 下载并安装软件
-2. 进入“设置-LLM设置”，在本地模型设置项填写服务端链接（记住端口号要一致），例如 http://127.0.0.1:8000 ，点击顶部的”更新“按钮，如果红色Tag变成绿色，说明和LLM服务端连接成功。
-![9.png](images/9.png)
-3. 在顶部Tab点击“+”号，或者在浏览网页时右键点击“展示Chatbot”开启Chatbot。
-![10.png](images/10.png)
-4. 在对话面板左下角选择本地LLM!
-![11.png](images/11.png)
-
-#### 2. Chat with RTX
-![img.png](images/12.png)
-**介绍**：Chat With RTX 是一款**演示**应用程序，可以将自己的内容（文档、笔记、视频或其他数据）与本地LLM进行交互。Chat With RTX集成了检索增强生成 (RAG)、TensorRT-LLM 和 RTX 加速，用户可以查询自定义聊天机器人以快速获得上下文相关的答案。Chat with RTX 支持各种文件格式，包括文本、pdf、doc/docx 和 xml。只需将应用程序指向包含文件的文件夹，它就会在几秒钟内将它们加载到库中。此外，用户可以提供 YouTube 播放列表的网址，应用程序将加载播放列表中视频的转录，然后查询它们涵盖的内容。
-
-**官网及下载地址**：https://www.nvidia.com/en-us/ai-on-rtx/chat-with-rtx-generative-ai/
-
-**操作系统：** Windows
-
-**相关语言：** 英文
-
-**注意事项：**
-1. 目前Chat with RTX是一个演示应用程序。
-2. 目前Chat with RTX要求NVIDIA GeForce™ RTX 30 或 40 系列 GPU 或 NVIDIA RTX™ Ampere 或 Ada Generation GPU，具有至少 8GB VRAM 和 16GB RAM。
-3. 演示应用程序安装包体积高达35GB。
-
-#### 3. 待补充
-*目前全球范围内可以兼容本地LLM的客户端极少，欢迎各位推荐或自荐*
-
-
-## 4. 使用本地LLMs需要注意什么？
-#### 1. 如何选择LLM并让其运行速度更快？
-#### 2. 当前LLM经常出现的问题有哪些？
-#### 3. 目前LLM能做什么？
-#### 4. TBD
-
-## TBD
-----------------
-最后，如果你对本地LLM非常熟悉，欢迎加入我们一起为本地LLMs生态出一份力！
-
-Github：https://github.com/xue160709/Local-LLM-Interaction-Guideline
-
-Twitter：https://twitter.com/XueZhirong
-
+[Englisht](README.md) &nbsp;&nbsp;&nbsp; [中文版](README-zh.md)
+# Local LLM Interaction Guide  
+## 1. Background  
+  
+### 1.1 What are LLMs?  
+LLMs, or Large Language Models, are advanced models built based on artificial intelligence and machine learning techniques to understand and generate natural language text. These models are able to perform a variety of language-related tasks by analyzing and learning from massive amounts of textual data and mastering the complex properties of language such as structure, syntax, semantics, and context. The capabilities of LLMs include, but are not limited to, text generation, question and answer, text summarization, translation, and sentiment analysis.  
+  
+LLMs such as GPT, LLama, Mistral series, etc., enable these models to capture the deeper associations and meanings between texts by means of technical architectures for deep learning, such as Transformer. The models are first pre-trained on a wide range of datasets to learn the general features and patterns of the language, and can then be fine-tuned for specific tasks or domains to improve their performance in particular applications.  
+  
+The pre-training phase equips the LLMs with a large amount of linguistic and world knowledge, while the fine-tuning phase enables the models to achieve higher performance on specific tasks. This training approach gives LLMs the flexibility and adaptability to handle a wide range of linguistic tasks, enabling them to provide accurate and diverse information and services to users.  
+  
+### 1.2 Differences between LLMs and applications  
+  
+#### Openness  
+**LLMs:** Through a process of deep learning pre-training and fine-tuning, LLMs acquire extensive knowledge gained from massive amounts of Internet text, enabling them to understand and generate a wide range of content types, including text, images, audio, video, and 3D material. This ability allows LLMs to demonstrate superior diverse information processing capabilities when dealing with a variety of topics and knowledge domains.  
+  
+**Applications:** Applications, on the other hand, are designed to meet specific needs, such as social interaction, news access, e-commerce, etc., and are typically less open and diverse in content than LLMs. each application is built around its core functionality, providing a user interface and experience optimization, but the range of information and services that the user accesses is limited by the purpose for which the application was designed and the functionality for which it was defined.  
+  
+#### Accuracy  
+**LLMs:** LLMs are capable of generating text on a wide range of topics and tasks by analyzing and learning from massive textual data, and mastering the structure, semantics, and context of language. However, the accuracy of these models not only relies on rich and diverse training data and advanced model architectures, but also faces the challenges of update lag and \"illusion\" problems. When dealing with specialized or up-to-date information, LLMs may produce unsubstantiated content, especially when there is a lack of sufficient context or when the information is rapidly changing. Therefore, when using information generated by these models for decision-making and analysis, additional validation is recommended to improve accuracy and reliability.  
+  
+**Applications:** The accuracy of information in applications is highly dependent on the curation and management of content, which often involves the active selection and provision of specialized individuals or teams. For example, in specialized domains such as healthcare and financial investment apps, developers and specialists invest significant resources to ensure that the information provided is accurate, reliable, and up-to-date. While this approach improves the quality of information within a specific domain, it also means that the scope of information that users are exposed to is limited by the breadth of knowledge and choices made by these specialized teams. As a result, while applications may provide highly accurate information within a given domain, their content coverage and perspective is constrained by human choice and the limitations of specialized domains.  
+  
+#### Predictability  
+**LLMs:** LLMs are less predictable because the answers they generate may vary depending on the diversity of the training data and the complexity of the model's understanding. Users may receive multiple possible answers without explicit instructions, or unexpected responses in a given context, or worse, fail to proceed to the next round of interaction. This uncertainty stems from the design and operational mechanisms of the model, and is especially evident when dealing with fuzzy queries or complex problems.  
+  
+**Applications:** Applications typically provide a higher degree of predictability because they are designed to meet specific needs and purposes, and their functionality, operational flow, and user interface are designed to provide a consistent and predictable user experience. Applications reduce uncertainty during operation through explicit user instructions and fixed interaction logic, allowing users to anticipate what their actions will result in.  
+  
+#### Availability  
+**LLMs:** LLMs currently have a large number of usability issues, including and not limited to the following, in addition to the phantom issues mentioned above:  
+1. **Answer to the wrong question:** LLMs, when dealing with complex or ambiguous queries, may sometimes provide answers that do not match the user's expectations. This phenomenon is usually due to the model's insufficient understanding of the question or misinterpretation of the intent of the query. Although model training covers a large amount of data to improve understanding of natural language, difficulties may still be encountered in understanding context-specific or domain-specific language.  
+2. **Response time:** Users may encounter long response times when interacting with LLMs, especially when performing complex generative tasks or processing a large number of data requests. This not only affects user experience but also limits the application of LLMs in real-time interaction scenarios. The prolonged response time is mainly due to the high computational demands of the model and the high server load.  
+3. **Processing capacity constraints:** Despite the theoretical capabilities of LLMs, in practice, their processing capacity is constrained by hardware resources, algorithmic efficiency and availability. For example, large-scale concurrent requests may lead to performance degradation, especially in resource-constrained environments. In addition, LLMs may be less efficient and accurate when processing long texts or complex tasks that require deeper understanding.  
+4. **Limitations of self-updating:** LLMs are usually pre-trained on fixed datasets, which means that their knowledge after training is static. Although it is possible to update the model by periodic re-training, this approach may not be sufficient to capture the latest information or trends in real-time, thus limiting to some extent the effectiveness of the model's application in fast-changing domains (e.g., news, technology, etc.).  
+  
+**Applications:** Thanks to a long history of accumulation and innovation in the field of software development and design, most applications have achieved a high degree of user-friendliness and stability. Designers and developers are able to build applications relying on proven platforms and frameworks, while widely adopted user experience design principles ensure that applications meet users' needs and expectations. In addition, through continuous user feedback and iterative development, apps are able to fix bugs and optimize performance in a timely manner, thus improving user satisfaction and overall app usability.  
+  
+### 1.3 What are the advantages and disadvantages of open source LLMs?  
+#### Advantages  
+1. **Flexibility and adaptability:** Open source LLMs provide models of different sizes, enabling them to be deployed on a wide range of devices, from small devices such as Raspberry Pi's and cell phones, to personal computers and even server clusters.  
+2. **Reducing dependencies:** The use of open source LLMs can reduce dependency on specific vendors, such as OpenAI, to some extent. This not only increases the accessibility of the technology, but also promotes innovation and autonomy.  
+3. **Privacy protection:** Open source LLMs allow users to deploy and use models in local or private cloud environments, which helps to minimize the risk of data leakage and provides a higher level of security for applications that handle sensitive or private data.  
+4. **Customizability:** Open-source models can be fine-tuned to meet specific needs, enabling users to optimize the model for a particular task or data set, thus improving its effectiveness and accuracy.  
+5. **Community support:** Open source LLMs often benefit from the support of an active developer and research community. Such communities not only provide technical support and shared solutions, but also facilitate rapid innovation of new features, optimizations and application scenarios.  
+6. **High Transparency:** The open source model provides visibility into the algorithms and data processing flows, enabling technical users and developers to review how the model works.  
+  
+#### Disadvantages  
+1. **Limitations of underlying models and datasets:** The upper and lower limits of performance of open source LLMs depend heavily on the underlying models and datasets behind them.The models provided by vendors such as Meta, Mistral, etc., while powerful, may not be suitable for all types of tasks, especially in those areas that require highly specialized knowledge.  
+2. **Resource and technical thresholds:** While open source LLMs offer great flexibility, deploying and maintaining these models requires considerable hardware resources and technical expertise. This can be a challenge for individuals or small teams that lack these resources or technical skills.  
+3. **Lack of harmonized standards:** There is a wide variety of LLMs in the open source community, which may use different architectures, training datasets and interfaces. While this diversity fosters innovation, it also creates complexity for users to select appropriate models and tools.  
+4. **Stability issues:** Locally deployed open-source models may encounter hardware limitations and software compatibility issues, resulting in unstable operation. This instability may affect the reliability of the model and the user experience.  
+5. **Processing speed issues:** Model inference can be very slow when using only the CPU, especially when processing large models or complex tasks. This not only extends the processing time, but may also limit the use of the model in real-time or application scenarios that require high responsiveness.  
+6. **Output quality fluctuations and controllability of content generation:** Open-source LLMs may experience fluctuations in the quality of output when dealing with specific language types or complex, borderline cases, sometimes generating irrelevant or meaningless responses. At the same time, when sensitive or demanding highly accurate content needs to be generated, these models may have difficulty in precisely controlling the quality and direction of the output, especially in the absence of careful supervision and customized fine-tuning, which may result in substandard output content or failure to meet specific expectations.  
+  
+  
+### 1.4 Differences between on-line and local LLMs  
+*LLLMs in this context refers specifically to open source models such as Llama, Mistral, GLM, etc.*  
+#### Availability  
+**Online LLMs:** On-line deployed LLMs provide instant access and high availability thanks to the pre-configured LLM and RAG (Retrieval Augmented Generative Model) environments on cloud servers by SaaS (Software as a Service) providers. Users don't have to worry about hardware configuration or installation process and can start using these models immediately for text generation, Q&A and other tasks. This deployment method is particularly suitable for users without specialized technical backgrounds or for organizations that need to deploy solutions quickly.  
+  
+**Local LLMs:** Locally deployed LLMs require a certain level of technical knowledge on the part of the user, including the ability to install, configure, and optimize the model.The inference performance and speed of LLMs is directly limited by an individual's or an organization's hardware configurations, such as processor, memory, and storage space. Additionally, while local deployment provides users with greater control, it lacks the encapsulation of advanced functionality like RAG and users may need to perform additional development work on their own.  
+  
+#### Cost  
+**Online LLMs:** For individual users, the on-demand billing model of the online LLMs service offers great flexibility and the advantage of a lower entry barrier. Individual users can choose the appropriate service plan according to their actual needs and frequency of use, avoiding a high initial investment. This is especially beneficial for users who only occasionally need to use the language model for specific projects or research. However, if individual users frequently use these services for large amounts of data processing, the costs may accumulate gradually, especially when using advanced features or large-scale datasets. For those individual users who need to use language modeling services on a long-term, ongoing basis, it is important to periodically evaluate the total cost.  
+  
+**Local LLMs:** For individual users, choosing to deploy LLMs locally means a one-time investment in high-performance computing hardware. While this may increase the financial cost for some users, it provides long-term cost-effectiveness, especially for those with sustained high-intensity usage requirements. Local deployment avoids duplicate service costs, and once the equipment is in use, the additional operating costs are relatively low, except for possible maintenance and upgrades. In addition, individual users are able to gain greater control and customization through local deployment, which may be particularly valuable to researchers or developers. However, it is important to note that local deployment also means that users must have some technical skills to configure and maintain the system.  
+  
+  
+#### Privacy  
+**Online LLMs:** When using online LLMs, user data needs to be transferred to a cloud server for processing, which triggers considerations of data privacy and security. While many SaaS providers adopt strong data protection measures and promise to protect user data from misuse or disclosure, the process still requires a foundation of user trust in the provider's data handling and privacy policies.  
+  
+**Local LLMs:** Compared to the online model, locally deployed LLMs provide a higher level of security in terms of privacy protection, mainly because data processing is done on the user's private devices or internal servers, eliminating the need for data to be outsourced. This deployment method gives the user much more control over the data and reduces the risk of data leakage.  
+  
+#### Dependence and control  
+**Online LLMs:** Using online services, users rely on the service provider to ensure the availability and performance of the service. This model simplifies the usage process by allowing the user to focus on the application of the model rather than its maintenance. However, it also means that the user's direct control is limited in terms of system prompting, context management, and model response customization. While online services offer some degree of configuration options, they may not be sufficient to meet all specific needs, especially in scenarios that require highly customized output.  
+  
+**Local LLMs:** Locally deployed models allow users to enjoy a higher level of control, including management of data processing, model configuration and system security. Users can deeply customize system prompts and contextual processing policies as needed, which can be important in specific application scenarios. However, this increased control and flexibility comes with higher technical requirements and possible initial setup complexity. While local deployment allows for a high degree of customization, it also requires users to have the appropriate technical skills to implement these customized solutions.  
+  
+#### Transparency  
+**Online LLMs:** Online LLMs services are provided by third parties and may raise transparency concerns for some users in terms of how the models work and how the data is processed. Service providers typically strive to provide documentation on model training, data processing, and privacy policies, among other things, with the intent of increasing transparency. However, due to commercial confidentiality and operational complexity, users may not have access to full details of a model's internal mechanisms. This requires users to trust the service provider and rely on the information and controls it provides for data security and privacy.  
+  
+**Local LLMs:** Locally deployed LLMs provide a higher degree of transparency by allowing users direct access to the model. Users can inspect, modify and optimize the models themselves, thereby gaining a deeper understanding of how they work and adapting their behavior to their needs. This direct control ensures complete understanding of the model and the ability to customize it, and is particularly suited to organizations that have high requirements for data security, privacy protection, or need to comply with specific regulations. However, it also means greater responsibility on the part of the user, including maintaining the transparency of the model and ensuring its compliance with ethical and legal standards.  
+  
+#### Offline  
+**Online LLMs:** Unavailable  
+  
+**Local LLMs:** are functional  
+### 1.5 What are the problems with using online LLMs?  
+When using online LLMs, we face challenges on multiple levels, and these issues, ranging from personal data privacy to model performance and cost to content integrity and the selection and application of retrieval-enhanced generative modeling (RAG) strategies, constitute a set of critical issues that require the joint attention of users and service providers.  
+  
+#### Question 1: Personal data privacy  
+The privacy of personal data becomes a significant point of concern during the use of online LLMs. Users' interactions with LLMs, as well as uploaded documents, may be collected by service providers for model fine-tuning and optimization.  
+  
+#### Question 2: Model performance and cost, the  
+Service providers may use LLMs of different sizes in order to balance cost and performance. smaller models (e.g., 7B or 13B parameters), while reducing computational resource consumption and improving response speed, may not have sufficient inference power to handle complex queries or generate high-quality text. It may be difficult for users to be informed of the size and performance of the model used when choosing a service, leading to discrepancies between the results and expectations in real-world applications. This opacity may affect users' experience and satisfaction.  
+  
+#### Issue 3: Content integrity  
+For processing long documents, there is a question of whether LLM is able to capture and understand the entire document content in its entirety. Due to technical limitations, some services may only process a part of the document, e.g., analyzing only the first few hundred words. This processing may cause the LLM to miss key information, which affects the accuracy and relevance of the generated content. Users may not be able to know whether their submission has been processed in its entirety, which in turn raises questions about the reliability of the results.  
+  
+#### Problem 4: Retrieval of an enhanced generative model (RAG) strategy that  
+The cutting methods and callback strategies of RAGs directly affect the effectiveness of LLMs, especially when dealing with queries that require extensive knowledge retrieval. Different cutting methods and callback strategies determine the way LLM accesses and integrates information, which in turn affects the accuracy and completeness of the final generated answer. If these strategies are not properly selected or optimized, the LLM may not be able to see or utilize the relevant information to generate the best answer. Users typically have no control over or knowledge of these internal processing details, which increases outcome uncertainty.  
+  
+## 2. Which theoretical scenarios are suitable for using native open source LLMs?  
+* The theoretical scenarios are labeled here because there are more practical problems with current open source LLMs, but these problems will be gradually overcome. *  
+  
+#### 1. Does my business scenario have high volume, high frequency data requests?  
+If you need to analyze and process a large number of documents every day, and a document requires about 4000 Token, LLM output 400 Token a round, then 10 rounds of interaction down to at least 5W Token, 20 that consumes 100W Token; if you need to cross-comparison and in-depth analysis of previous documents, assuming that there is a library of 1000 articles, that One day needs to consume 1 billion Token (provided that there is no other technology to add).  
+  
+**Theoretical Scenarios:** Personal Knowledge Base Scenario, Multi-Document Automated Analysis Scenario ......  
+  
+#### 2. Does my business scenario involve multiple information processing or even multi-tasking?  
+In the area of multitasking and multiple information processing, there is a great deal of complexity in the operations and processing logic involved, especially for activities performed on a computer. These activities are more than simply executing commands; they involve judging the user's intent, transferring and interacting between data, and how to respond based on the current context. The Token consumption involved here is mainly due to the fact that these operations require a lot of computational resources to process and respond to the user's needs.  
+  
+In this process, the system prompts required at each step, the logical handling of contextual dialogues, etc., need to be personalized and differentiated according to the specific situation. In this case, \"thousand faces\" means that the system must be able to provide customized services according to the specific needs and context of each user. This is fundamentally different from a \"thousand faces\" based on recommendation algorithms. The essential difference is:  
+1. **Dynamic versus static processing:** Processing in the area of multitasking and multiple information processing is dynamic, relying on the current context and the immediate needs of the user, whereas processing based on recommendation algorithms is more static, relying on the user's historical data.  
+2.** Degree of personalization:** Although both pursue \"thousands of people, thousands of faces\", multitasking is more focused on the precise response to user needs in a specific context, and recommendation algorithms are more based on historical data or general predictions based on the data of similar users.  
+3. **Interactivity:** Multitasking involves real-time interaction with the user, whereas recommendation algorithms are more of a one-way content push.  
+  
+* Note that this essential difference dictates that native LLMs are the only solution to multiple information processing or even multitasking, but it is possible that it is a closed-source LLM.  
+  
+**Theoretical scenarios:** report writing scenarios, interaction scenarios dependent on operating system capabilities ......  
+  
+#### 3. Does my business scenario involve personal privacy or sensitive data?  
+When exploring personalization domains such as goal setting, diary writing, financial management, emotional communication, etc., we have to face a real problem: these activities often involve the processing of a large amount of personal data, which contains sensitive information about the user. For example, in diary writing, users may record their private thoughts and feelings; in financial management, users need to process their income, expenditure and other financial information; in emotional communication, users may share their psychological state and emotional experience. The data generated and processed in these activities are highly sensitive personal information, which, once leaked, may cause irreparable harm to users. In such a context, the application of local open source LLMs becomes particularly important and necessary.  
+  
+**Theoretical Scenarios:** Personal Goal Setting and Tracking Scenarios, Private Emotional Communication Scenarios, Journal Writing and Emotional Analysis Scenarios ......  
+  
+#### 4. Does my business scenario require a large model with low guardrails?  
+In the current technological environment, online LLMs have to face various legal, regulatory and ethical constraints while providing services. These constraints are often enforced by adding \"guardrails\" to prevent models from generating inappropriate content, such as misleading information, invasion of privacy, and hate speech. However, these guardrails limit the functionality of LLMs and the complete use of knowledge to a certain extent, especially in application scenarios that require a high degree of freedom, such as role-playing, creative writing, etc. In these scenarios, content filtering can be used to prevent the model from generating inappropriate content. In these scenarios, content filtering and restriction may hinder creativity and deepen the user experience.  
+  
+In this context, locally deployed LLMs offer a solution. With local deployment, users can adjust the criteria for content filtering according to their needs and scope of responsibility, avoiding legal risks while retaining a higher degree of creative freedom and personalized service. This flexibility is particularly important in certain business scenarios, providing users with a richer and deeper interactive experience.  
+  
+**Theoretical Scenarios:** Counseling Scenarios, Role Play Scenarios in Selected Areas  
+  
+## 3. out-of-the-box native LLMs  
+  
+Thanks to the open source LLMs provided by Meta, Mistral and many other developers, as well as the open source project Llama.cpp, we can now use open source LLMs at a very low cost, and I'd like to recommend some out-of-the-box backends and clients to help you start your journey with local LLMs.  
+  
+### Local LLMs recommended and downloaded  
+*We recommend using the GGUF version of the quantization model as it can be used alone or in a mix of CPU and consumer GPU environments. Feel free to share with us models that you have used well*.  
+  
+#### 1. Mixtral-8x7B-Instruct-v0.1-GGUF  
+**Introduction** : Mixtral 8x7B is a high quality Sparse Model of Expertise (SMoE) blend with open weights. We recommend using the Q3 and higher versions of the quantization model.  
+  
+**Official website:** https://mistral.ai/  
+  
+**Model size:** 8x7B  
+  
+**Related languages:** English  
+  
+**Context length:** 32K  
+  
+**Applicable to:** For NVIDIA 3090/4090 and larger video memory PC mainframes, M1/M2/M3 Macs with 32GB of RAM and above  
+  
+**Downloaded at:**  
+  
+https://huggingface.co/TheBloke/Mixtral-8x7B-Instruct-v0.1-GGUF/tree/main  
+  
+https://modelscope.cn/models/limoncc/Mixtral-8x7B-Instruct-v0.1-GGUF/files  
+  
+#### 2. OpenChat 3.5 0106  
+**Introduction**: OpenChat's January '24 release, fine-tuned from Mistral 7B via C-RLFT, has better performance in inference and bilingual English/Chinese Q&A. We recommend using Q4 and above quantitative models.  
+  
+**Official website:** https://github.com/imoneoi/openchat  
+  
+**Model size:** 7B  
+  
+**Related languages:** Chinese, English  
+  
+**Context length:** 8K  
+  
+**Applicable to:** For most computers  
+  
+**Downloaded at:**  
+  
+https://huggingface.co/TheBloke/openchat-3.5-0106-GGUF  
+  
+https://modelscope.cn/models/fivetwin/openchat-3.5-0106-GGUF/files  
+  
+#### 3. OpenChat 3.5-16k  
+**Introduction**: OpenChat's December '23 release, fine-tuned from Mistral 7B via C-RLFT, has better performance in inference and bilingual English/Chinese Q&A. We recommend using Q4 and above quantitative models.  
+  
+**Official website:** https://github.com/imoneoi/openchat  
+  
+**Model size:** 7B  
+  
+**Related languages:** Chinese, English  
+  
+**Context length:** 16K  
+  
+**Applicable to:** For most computers  
+  
+**Downloaded at:**  
+  
+https://huggingface.co/TheBloke/openchat_3.5-16k-GGUF/tree/main  
+  
+https://modelscope.cn/models/limoncc/OPENCHAT3.5-16K-GGUF/files  
+  
+  
+#### 4. Qwen 14B  
+**Introduction**: Tongyi Qianwen-14B (Qwen-14B) is a 14 billion parameter scale model of the Tongyi Qianwen large model series developed by Aliyun. We recommend using Q5 and above quantitative models.  
+  
+**Official website:** https://github.com/QwenLM/Qwen  
+  
+**Model size:** 14B  
+  
+**Related languages:** Chinese  
+  
+**Context length:** 8K  
+  
+**Applicable to:** For NVIDIA 3080/4080 and larger video memory PC mainframes, M1/M2/M3 Macs with 16GB of RAM and above  
+  
+**Downloaded at:**  
+  
+https://huggingface.co/Xorbits/Qwen-14B-Chat-GGUF  
+  
+https://modelscope.cn/models/Xorbits/Qwen-14B-Chat-GGUF/summary  
+  
+#### 5. Qwen 7B  
+**Introduction**: Tongyi Qianwen-7B (Qwen-7B) is a 7 billion parameter scale model of the Tongyi Qianwen large model series developed by Aliyun. We recommend using Q4 and above quantitative models.  
+  
+**Official website:** https://github.com/QwenLM/Qwen  
+  
+**Model size:** 7B  
+  
+**Related languages:** Chinese  
+  
+**Context length:** 32K  
+  
+**Applicable to:** For most computers  
+  
+**Downloaded at:**  
+  
+https://huggingface.co/Xorbits/Qwen-7B-Chat-GGUF  
+  
+https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary  
+  
+### How to turn on local LLM  
+#### 1. LM Studio  
+![1.png](images/1.png)  
+  
+**Introduction**: LM Studio develops a set of friendly user interfaces based on LLama.cpp, supports installation and use on Windows, Mac and Linux systems, provides models in multiple languages, and offers features such as model search, download and chat.  
+  
+**Official website and download address**: https://lmstudio.ai/  
+  
+**Operating systems:** Windows, Mac, Linux  
+  
+**Related languages:** English  
+  
+**Steps for use:**  
+1. Download and install the software  
+2. Download the model in the application, if you can't download the model due to network or other circumstances, you can select the folder where the LLM is stored and create a new folder named \"TheBloke\" in the folder, then put the downloaded model into the \"TheBloke\" folder. Then put the downloaded models into \"TheBloke\" folder.  
+![2.png](images/2.png)  
+3. Click \"Select a model to load\" to select a model to open the dialog mode, you can also select the corresponding \"GPU Acceleration\" and \"Context Length\" according to your own computer and model to reload the model. \"Context Length\" according to your computer and model to reload the model. (If your computer configuration is average, it is recommended to uncheck \"GPU Offload\", and the larger the \"Context Length\" setting, the longer the waiting time will be, please refer to the fourth part of the guide for a more detailed introduction.)  
+![3.png](images/3.png)  
+4. If server-side mode is enabled, load the model and fill in the port (e.g. 8000) and click \"Start Server\" to run. Remember that client-server communication must be compatible with OpenAI API mode.  
+![4.png](images/4.png)  
+  
+**Merits:**  
+1. The overall use process is friendly to the average user.  
+2. Models can be easily switched.  
+3. The degree of mixing of CPU and GPU can be easily selected.  
+4. Preset can be easily switched.  
+  
+**Note:**  
+1. Always remember to reload the model manually after switching models or setting parameters.  
+2. In server-side mode, it may be necessary to restart the server after changing models or setting parameters.  
+3. Booting is not supported for the time being.  
+4. Automatic entry into server-side mode is not supported for the time being.  
+5. If your system is Windows/Linux, the processor needs to support AVX2.  
+  
+#### 2. llamafile  
+![5.png](images/5.png)  
+  
+**Introduction**: llamafile combines llama.cpp with Cosmopolitan Libc into a framework that compresses all the complexity of LLMs into a single file executable that runs locally on most computers.  
+  
+**Official website:** https://github.com/Mozilla-Ocho/llamafile  
+  
+**Downloaded at:** https://github.com/Mozilla-Ocho/llamafile/releases/  
+  
+**Operating systems:** Windows, Mac, Linux  
+  
+**Related languages:** English  
+  
+**Steps for use:**  
+1. Downloading documents  
+2. If you are a macOS or Linux user, open a computer terminal and grant the computer permission to execute this new file `chmod +x llava-v1.5-7b-q4.llamafile`, then run the llama file `. /llava-v1.5-7b-q4.llamafile -ngl 9999`. (Remember to enter the corresponding folder before typing the command, \"llava-v1.5-7b-q4.llamafile\" is the name of the file you downloaded)  
+3. If you are a Windows user, you can rename the file by adding \".exe\" to the end of the file.  
+4. Your browser should automatically open and display the chat screen. (If not, just open your browser and point it to http://127.0.0.1:8080/)  
+5. When you have finished chatting, go back to your terminal and click `Control-C` to close llamafile, or just close the cmd window.  
+6. In addition, when you turn on llamafile, server-side mode is automatically enabled, so you can communicate with the client by filling in http://127.0.0.1:8080/. Remember that client-server communication must be compatible with OpenAI API mode.  
+  
+**Merits:**  
+1. Download the file and use it directly.  
+2. Directly enter server-side mode after opening the application.  
+3. You can start the application and server mode at boot time by setting it from the command line.  
+  
+**Note:**  
+1. Currently part of llamafile's functionality relies on CLI (Command Line Interface), which is more suitable for users with programming skills.  
+2. Since Windows has a 4GB limit on the size of executable files, most llamafiles downloaded from the Internet cannot be used, and you need to repackage and reset the llamafile yourself, for details, please see: https://github.com/Mozilla-Ocho/llamafile .  
+3. Importing a model that has been downloaded locally requires repackaging another llamafile.  
+4. Changing the model during use is equivalent to opening another file, which is not very convenient to operate.  
+5. If your system is Windows/Linux, the processor needs to support AVX2.  
+  
+#### 3. Ollama  
+**Introduction**: Ollama is a lightweight, extensible framework based on LLama.cpp for building and running language models locally.  
+  
+**Official website and download address**: https://ollama.com/  
+  
+**Operating system:** Mac, Linux  
+  
+**Related languages:** English  
+  
+**Steps for use:**  
+1. Download and open the implementation file  
+2. After successful installation you will be prompted to run the model within cmd, e.g. `ollama run mistral` (if you have not downloaded the model it will be downloaded automatically).  
+![6.png](images/6.png)  
+![7.png](images/7.png)  
+3. Start a dialog in cmd  
+  
+**Merits:**  
+1. Support for boot-up.  
+2. Directly enter server-side mode after opening the application.  
+3. Models can be downloaded directly from the command line.  
+4. Models can be switched directly from the command line.  
+  
+**Note:**  
+1. Currently Ollama relies on CLI (Command Line Interface), which is more suitable for users with programming skills.  
+2. Importing a model that has been downloaded locally requires a command line import, see https://github.com/ollama/ollama for details.  
+3. The server-side model is not the same as the OpenAI API, which requires the client to be compatible and select the corresponding model.  
+4. If your system is Linux, the processor needs to support AVX2.  
+  
+*Feel free to share your own good LLM backends with us  
+  
+### Recommendations for applications that can connect to the local LLM  
+#### 1. MiX Copilot  
+![8.png](images/8.png)  
+  
+**Introduction**: MiX Copilot is a PC client that supports OpenAI and local LLMs for automatically crawling, organizing and analyzing information (data are saved locally as Markdown to avoid privacy leakage), supporting multiple Chatbot conversations at the same time, browsing web pages + using LLMs, making LLM workflows (including customized Prompt, querying web pages) and other functions.  
+  
+**Official website and download address**: https://www.mix-copilot.com/  
+  
+**Operating systems:** Windows, Mac  
+  
+**Related languages:** Chinese, English  
+  
+**Tutorial on use:** https://hci-top.notion.site/MiX-Copilot-Tutorial-English-2c95481c5d4c4c818f40bd04c299b7ea  
+  
+**Steps for use:**  
+1. Download and install the software  
+2. Go to \"Settings - LLM Settings\", fill in the server link in the Local Model Settings item (remember the port number should be the same), for example, http://127.0.0.1:8000, and click the \"Update\" button at the top, if the red If the red tag turns green, it means the connection with LLM server is successful.  
+![9.png](images/9.png)  
+3. Enable Chatbot by clicking the \"+\" sign in the top Tab or right clicking \"Show Chatbot\" while browsing the web.  
+![10.png](images/10.png)  
+4. Select Local LLM in the lower left corner of the dialog panel!  
+![11.png](images/11.png)  
+  
+#### 2. Chat with RTX  
+![img.png](images/12.png)  
+**Introduction**:Chat With RTX is a **demo** application that allows you to interact your own content (documents, notes, videos, or other data) with native LLM.Chat With RTX integrates Retrieval Augmented Generation (RAG), TensorRT-LLM, and RTX Acceleration, which allows users to query a custom chatbot to quickly get Chat with RTX supports a variety of file formats including text, pdf, doc/docx, and xml. simply point the application to the folder containing the files and it will load them into the library in seconds. Additionally, users can provide the URL of a YouTube playlist and the application will load transcriptions of the videos in the playlist and then look up what they cover.  
+  
+**Official website and download address**: https://www.nvidia.com/en-us/ai-on-rtx/chat-with-rtx-generative-ai/  
+  
+**Operating system:** Windows  
+  
+**Related languages:** English  
+  
+**Note:**  
+1. Currently Chat with RTX is a demo application.  
+2. Currently Chat with RTX requires NVIDIA GeForce™ RTX 30 or 40 series GPUs or NVIDIA RTX™ Ampere or Ada Generation GPUs with at least 8GB of VRAM and 16GB of RAM.  
+3. The size of the demo application installation package is up to 35GB.  
+  
+#### 3. To be added  
+*There are very few native LLM-compatible clients in the world, so we welcome your recommendations or self-recommendations.  
+  
+  
+## 4. What do I need to be aware of when using local LLMs?  
+#### 1. How can I choose an LLM and make it run faster?  
+#### 2. What are the current recurring problems with LLM?  
+#### 3. What can LLM currently do?  
+#### 4. TBD  
+  
+## TBD  
+----------------  
+Finally, if you are familiar with local LLMs, you are welcome to join us in contributing to the local LLMs ecosystem!  
+  
+Github：https://github.com/xue160709/Local-LLM-Interaction-Guideline  
+  
+Twitter：https://twitter.com/XueZhirong  
+  
 Discord：https://discord.gg/4AQuf2ctav
