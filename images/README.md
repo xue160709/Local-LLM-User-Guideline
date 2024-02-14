@@ -275,7 +275,7 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 2. 如果你是macOS或者Linux用户，打开计算机终端，授予计算机执行此新文件的权限`chmod +x llava-v1.5-7b-q4.llamafile`，接着运行该llama文件`./llava-v1.5-7b-q4.llamafile -ngl 9999`。（记住先进入对应的文件夹再输入指令，“llava-v1.5-7b-q4.llamafile”是你下载的文件名字）
 3. 如果你是Windows用户，可以在文件末尾添加“.exe”来重命名该文件。
 4. 你的浏览器应该自动打开并显示聊天界面。 （如果没有，只需打开浏览器并将其指向 http://127.0.0.1:8080/  
-5. 聊天完毕后，返回终端并点击 `Control-C` 关闭 llamafile，或者直接关闭CMD窗口。
+5. 聊天完毕后，返回终端并点击 `Control-C` 关闭 llamafile，或者直接关闭cmd窗口。
 6. 另外，开启llamafile后会自动开启服务端模式，在客户端填写 http://127.0.0.1:8080/ 即可通讯。记住，客户端和服务端的通讯必须兼容OpenAI API模式。
 
 优点：
@@ -297,8 +297,8 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 
 使用步骤：
 1. 下载并打开执行文件
-2. 成功安装后会提示在CMD内运行模型，例如`ollama run mistral`（如果没有下载过模型会自动下载模型）。![[Pasted image 20240214143611.png]]![[截屏2024-02-14 11.04.15.png]]
-4. 在CMD中开始对话
+2. 成功安装后会提示在cmd内运行模型，例如`ollama run mistral`（如果没有下载过模型会自动下载模型）。![[Pasted image 20240214143611.png]]![[截屏2024-02-14 11.04.15.png]]
+4. 在cmd中开始对话
 
 优点：
 1. 支持开机启动。

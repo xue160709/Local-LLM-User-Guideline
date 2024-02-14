@@ -261,8 +261,8 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 *欢迎分享自己使用过不错的LLM后端给我们*
 
 ### 可连接本地LLM的应用推荐
-#### 1. MiX Copilot
-![[Pasted image 20240214150016.png]]
+#### 1. MiX Copilot!
+![1.png](images%2F1.png)
 **介绍：**MiX Copilot 是一款支持OpenAI和本地LLMs的PC客户端，用于自动爬取、整理和分析资料（数据都以Markdown的形式保存到本地，避免隐私泄露），支持多个Chatbot同时对话、浏览网页+使用LLMs、制作LLM工作流（包括定制Prompt、查询网页）等功能。目前MiX Copilot 支持Windows和MacOS客户端，支持中英文语言。
 **官网及下载地址：**https://www.mix-copilot.com/
 **使用教程**：**https://hci-top.notion.site/MiX-Copilot-Tutorial-English-2c95481c5d4c4c818f40bd04c299b7ea
