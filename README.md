@@ -338,7 +338,12 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 4. 在对话面板左下角选择本地LLM!
 ![11.png](images%2F11.png)
 
-#### 2. 待补充
+#### 2. Chat with RTX
+
+介绍：Chat With RTX 是一款**演示**应用程序，可以将自己的内容（文档、笔记、视频或其他数据）与本地LLM进行交互。Chat With RTX集成了检索增强生成 (RAG)、TensorRT-LLM 和 RTX 加速，用户可以查询自定义聊天机器人以快速获得上下文相关的答案。
+
+官网及下载地址：https://www.nvidia.com/en-us/ai-on-rtx/chat-with-rtx-generative-ai/
+#### 3. 待补充
 *目前全球范围内可以兼容本地LLM的客户端极少，欢迎各位推荐或自荐*
 
 
