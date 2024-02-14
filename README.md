@@ -132,7 +132,7 @@ In this context, locally deployed LLMs offer a solution. With local deployment, 
   
 **Theoretical Scenarios:** Counseling Scenarios, Role Play Scenarios in Selected Areas  
   
-## 3. out-of-the-box native LLMs  
+## 3. Out-of-the-box native LLMs  
   
 Thanks to the open source LLMs provided by Meta, Mistral and many other developers, as well as the open source project Llama.cpp, we can now use open source LLMs at a very low cost, and I'd like to recommend some out-of-the-box backends and clients to help you start your journey with local LLMs.  
   
@@ -235,7 +235,7 @@ https://huggingface.co/Xorbits/Qwen-7B-Chat-GGUF
   
 https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary  
   
-### How to turn on local LLM  
+### How to use local LLM  
 #### 1. LM Studio  
 ![1.png](images/1.png)  
   
