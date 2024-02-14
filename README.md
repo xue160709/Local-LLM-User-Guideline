@@ -242,6 +242,10 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 
 **官网及下载地址**：https://lmstudio.ai/
 
+**操作系统：** Windows、Mac、Linux
+
+**相关语言：** 英文
+
 **使用步骤：**
 1. 下载并安装软件
 2. 在应用内下载模型，如果因网络等情况无法下载，可以选择存放LLM的文件夹后并在文件夹里新建一个名为“TheBloke”的文件夹，然后将下载过的模型放进“TheBloke”文件夹里。
@@ -267,11 +271,15 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 #### 2. llamafile
 ![5.png](images%2F5.png)
 
-**介绍**：llamafile将 llama.cpp 与 Cosmopolitan Libc 组合成一个框架，将 LLMs 的所有复杂性压缩为在大多数计算机上本地运行的单个文件可执行文件，支持Windows、Mac和Linux。
+**介绍**：llamafile将 llama.cpp 与 Cosmopolitan Libc 组合成一个框架，将 LLMs 的所有复杂性压缩为在大多数计算机上本地运行的单个文件可执行文件。
 
 **官网：** https://github.com/Mozilla-Ocho/llamafile
 
 **下载地址：** https://github.com/Mozilla-Ocho/llamafile/releases/
+
+**操作系统：** Windows、Mac、Linux
+
+**相关语言：** 英文
 
 **使用步骤：**
 1. 下载文件
@@ -294,9 +302,13 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 5. 如果你的系统是Windows/Linux，处理器需要支持AVX2。
 
 #### 3. Ollama
-**介绍**：Ollama 是一个基于LLama.cpp的轻量级、可扩展的框架，用于在本地构建和运行语言模型。目前支持Mac和Linux，Windows版本暂未提供。
+**介绍**：Ollama 是一个基于LLama.cpp的轻量级、可扩展的框架，用于在本地构建和运行语言模型。
 
 **官网及下载地址**：https://ollama.com/
+
+**操作系统：** Mac、Linux
+
+**相关语言：** 英文
 
 **使用步骤：**
 1. 下载并打开执行文件
@@ -323,9 +335,13 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 #### 1. MiX Copilot
 ![8.png](images%2F8.png)
 
-**介绍**：MiX Copilot 是一款支持OpenAI和本地LLMs的PC客户端，用于自动爬取、整理和分析资料（数据都以Markdown的形式保存到本地，避免隐私泄露），支持多个Chatbot同时对话、浏览网页+使用LLMs、制作LLM工作流（包括定制Prompt、查询网页）等功能。目前MiX Copilot 支持Windows和MacOS客户端，支持中英文语言。
+**介绍**：MiX Copilot 是一款支持OpenAI和本地LLMs的PC客户端，用于自动爬取、整理和分析资料（数据都以Markdown的形式保存到本地，避免隐私泄露），支持多个Chatbot同时对话、浏览网页+使用LLMs、制作LLM工作流（包括定制Prompt、查询网页）等功能。
 
 **官网及下载地址**：https://www.mix-copilot.com/
+
+**操作系统：** Windows、Mac
+
+**相关语言：** 中文、英文
 
 使用教程：https://hci-top.notion.site/MiX-Copilot-Tutorial-English-2c95481c5d4c4c818f40bd04c299b7ea
 
@@ -344,10 +360,14 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 
 **官网及下载地址**：https://www.nvidia.com/en-us/ai-on-rtx/chat-with-rtx-generative-ai/
 
+**操作系统：** Windows
+
+**相关语言：** 英文
+
 **注意事项：**
 1. 目前Chat with RTX是一个演示应用程序。
-2. 目前Chat with RTX只支持Windows。
-3. 目前Chat with RTX要求NVIDIA GeForce™ RTX 30 或 40 系列 GPU 或 NVIDIA RTX™ Ampere 或 Ada Generation GPU，具有至少 8GB VRAM 和 16GB RAM。
+2. 目前Chat with RTX要求NVIDIA GeForce™ RTX 30 或 40 系列 GPU 或 NVIDIA RTX™ Ampere 或 Ada Generation GPU，具有至少 8GB VRAM 和 16GB RAM。
+3. 演示应用程序安装包体积高达35GB。
 
 #### 3. 待补充
 *目前全球范围内可以兼容本地LLM的客户端极少，欢迎各位推荐或自荐*
