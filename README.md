@@ -313,7 +313,7 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 **使用步骤：**
 1. 下载并打开执行文件
 2. 成功安装后会提示在cmd内运行模型，例如`ollama run mistral`（如果没有下载过模型会自动下载模型）。
-![6.png](images%2F6.png)
+![6.png](/images/6.png)
 ![7.png](images%2F7.png)
 3. 在cmd中开始对话
 
