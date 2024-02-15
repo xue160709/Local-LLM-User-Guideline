@@ -407,6 +407,6 @@ Finally, if you are very familiar with local LLM, welcome to join our discussion
   
 Github：https://github.com/xue160709/Local-LLM-Interaction-Guideline  
   
-Twitter：https://twitter.com/XueZhirong  
-  
 Discord：https://discord.gg/4AQuf2ctav
+
+Twitter：https://twitter.com/XueZhirong  
