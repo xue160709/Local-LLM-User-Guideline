@@ -355,7 +355,25 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 4. 在对话面板左下角选择本地LLM!
 ![11.png](images/11.png)
 
-#### 2. Chat with RTX
+#### 2. Reor
+![13.jpg](images/13.jpg)
+**介绍**：Reor 是一款由人工智能驱动的桌面笔记应用程序：它会自动链接相关想法、回答笔记中的问题并提供语义搜索。所有内容都存储在本地，用户可以使用类似黑曜石的 Markdown 编辑器来编辑笔记。
+
+**官网及下载地址**：https://www.reorproject.org/
+
+**操作系统：** Windows、Mac
+
+**相关语言：** 英文
+
+**使用步骤：**
+1. 下载并安装软件。
+2. 选择你存放Markdown的文件夹。
+3. 在设置页选择你下载好的量化模型（GGUF格式）以及设置上下文长度。
+![14.png](images/14.png)
+3. 选择你需要的Embedding模型。**注意：** 一部分地区用户可能因为网络问题无法下载Embedding模型，导致应用无法使用。另外，应用中提供的Embedding模型只擅长处理英文，其他语言不一定适用。
+4. 设置RAG的返回数量。
+
+#### 3. Chat with RTX
 ![img.png](images/12.png)
 **介绍**：Chat With RTX 是一款**演示**应用程序，可以将自己的内容（文档、笔记、视频或其他数据）与本地LLM进行交互。Chat With RTX集成了检索增强生成 (RAG)、TensorRT-LLM 和 RTX 加速，用户可以查询自定义聊天机器人以快速获得上下文相关的答案。Chat with RTX 支持各种文件格式，包括文本、pdf、doc/docx 和 xml。只需将应用程序指向包含文件的文件夹，它就会在几秒钟内将它们加载到库中。此外，用户可以提供 YouTube 播放列表的网址，应用程序将加载播放列表中视频的转录，然后查询它们涵盖的内容。
 
@@ -370,7 +388,7 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 2. 目前Chat with RTX要求NVIDIA GeForce™ RTX 30 或 40 系列 GPU 或 NVIDIA RTX™ Ampere 或 Ada Generation GPU，具有至少 8GB VRAM 和 16GB RAM。
 3. 演示应用程序安装包体积高达35GB。
 
-#### 3. 待补充
+#### 4. 待补充
 *目前全球范围内可以兼容本地LLM的客户端极少，欢迎各位推荐或自荐*
 
 

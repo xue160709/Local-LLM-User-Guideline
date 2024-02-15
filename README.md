@@ -354,8 +354,26 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 ![10.png](images/10.png)  
 4. Select Local LLM in the lower left corner of the dialog panel!  
 ![11.png](images/11.png)  
+
+#### 2.Reor
+![13.jpg](images/13.jpg)
+**Introduction**: Reor is a desktop note-taking app powered by artificial intelligence: it automatically links related ideas, answers questions in notes, and provides semantic search. All content is stored locally, and users can edit notes using a Markdown editor like Obsidian.
+
+**Official website and download address**: https://www.reorproject.org/
+
+**Operating System:** Windows, Mac
+
+**Related languages:** English
+
+**Steps for use:**
+1. Download and install the software.
+2. Select the folder where you store Markdown.
+3. On the settings page, select the quantization model you downloaded (GGUF format) and set the context length.
+![14.png](images/14.png)
+3. Select the Embedding model you need. **Note:** Users in some areas may be unable to download the Embedding model due to network problems, resulting in the application becoming unusable. In addition, the Embedding model provided in the application is only good at processing English and may not be applicable to other languages.
+4. Set the return quantity of RAG.
   
-#### 2. Chat with RTX  
+#### 3. Chat with RTX  
 ![img.png](images/12.png)  
 **Introduction**:Chat With RTX is a **demo** application that allows you to interact your own content (documents, notes, videos, or other data) with native LLM.Chat With RTX integrates Retrieval Augmented Generation (RAG), TensorRT-LLM, and RTX Acceleration, which allows users to query a custom chatbot to quickly get Chat with RTX supports a variety of file formats including text, pdf, doc/docx, and xml. simply point the application to the folder containing the files and it will load them into the library in seconds. Additionally, users can provide the URL of a YouTube playlist and the application will load transcriptions of the videos in the playlist and then look up what they cover.  
   
