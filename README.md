@@ -1,5 +1,5 @@
 [English](README.md) &nbsp;&nbsp; [中文版](README-zh.md)
-# Local LLM Interaction Guide  
+# Local LLM User Guide  
 ## 1. Background  
   
 ### 1.1 What are LLMs?  

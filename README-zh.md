@@ -1,5 +1,5 @@
 [English](README.md) &nbsp;&nbsp; [中文版](README-zh.md)
-# 本地LLM交互指南
+# 本地LLM使用指南
 ## 1. 背景介绍
 
 ### 1.1 什么是LLMs？
