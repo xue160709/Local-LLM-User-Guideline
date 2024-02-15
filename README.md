@@ -1,4 +1,7 @@
 [English](README.md) &nbsp;&nbsp; [中文版](README-zh.md)
+
+If you are very familiar with local LLM, welcome to join our discussion! Discord: https://discord.gg/4AQuf2ctav
+
 # Local LLM User Guide  
 ## 1. Background  
   
@@ -400,7 +403,7 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
   
 ## TBD  
 ----------------  
-Finally, if you are familiar with local LLMs, you are welcome to join us in contributing to the local LLMs ecosystem!  
+Finally, if you are very familiar with local LLM, welcome to join our discussion!
   
 Github：https://github.com/xue160709/Local-LLM-Interaction-Guideline  
   

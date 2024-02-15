@@ -1,4 +1,7 @@
 [English](README.md) &nbsp;&nbsp; [中文版](README-zh.md)
+
+如果你对本地LLM非常熟悉，欢迎加入我们的讨论！Discord：https://discord.gg/4AQuf2ctav
+
 # 本地LLM使用指南
 ## 1. 背景介绍
 
@@ -400,7 +403,7 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 
 ## TBD
 ----------------
-最后，如果你对本地LLM非常熟悉，欢迎加入我们一起为本地LLMs生态出一份力！
+最后，如果你对本地LLM非常熟悉，欢迎加入我们的讨论！
 
 Github：https://github.com/xue160709/Local-LLM-Interaction-Guideline
 
