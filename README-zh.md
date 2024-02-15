@@ -139,7 +139,7 @@ RAG的切割方式和回调策略直接影响LLM的效果，特别是在处理�
 ### 本地LLMs推荐及下载
 *我们推荐使用GGUF版本的量化模型，因为它可以在CPU和消费级GPU环境下单独或者混合使用。欢迎分享自己使用过不错的模型给我们*
 
-#### 1. Mixtral-8x7B-Instruct-v0.1-GGUF
+#### 1. Mixtral-8x7B-Instruct-v0.1
 **介绍**：Mixtral 8x7B是一个具有开放权重的高质量稀疏专家模型 （SMoE） 混合。我们推荐使用Q3及以上版本的量化模型。
 
 **官网：** https://mistral.ai/

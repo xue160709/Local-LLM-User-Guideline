@@ -139,7 +139,7 @@ Thanks to the open source LLMs provided by Meta, Mistral and many other develope
 ### Local LLMs recommended and downloaded  
 *We recommend using the GGUF version of the quantization model as it can be used alone or in a mix of CPU and consumer GPU environments. Feel free to share with us models that you have used well*.  
   
-#### 1. Mixtral-8x7B-Instruct-v0.1-GGUF  
+#### 1. Mixtral-8x7B-Instruct-v0.1  
 **Introduction** : Mixtral 8x7B is a high quality Sparse Model of Expertise (SMoE) blend with open weights. We recommend using the Q3 and higher versions of the quantization model.  
   
 **Official website:** https://mistral.ai/  
