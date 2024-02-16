@@ -169,7 +169,7 @@ https://modelscope.cn/models/limoncc/Mixtral-8x7B-Instruct-v0.1-GGUF/files
 
 **模型大小：** 14B
 
-**相关语言：** 中文
+**相关语言：** 英文、中文
 
 **上下文长度：** 32k
 
@@ -180,13 +180,13 @@ https://modelscope.cn/models/limoncc/Mixtral-8x7B-Instruct-v0.1-GGUF/files
 https://huggingface.co/Qwen/Qwen1.5-14B-Chat-GGUF
 
 #### 3. Qwen1.5-7B
-**介绍**：Qwen1.5-7B是阿里云研发的通义千问大模型系列的70亿参数规模的模型。我们推荐使用Q4及以上量化模型。
+**介绍**：Qwen1.5-7B是阿里云研发的通义千问大模型系列的70亿参数规模的模型。我们推荐使用Q2及以上量化模型。
 
 **官网：** https://github.com/QwenLM/Qwen1.5
 
 **模型大小：** 7B
 
-**相关语言：** 中文
+**相关语言：** 英文、中文
 
 **上下文长度：** 32K
 

@@ -168,7 +168,7 @@ https://modelscope.cn/models/limoncc/Mixtral-8x7B-Instruct-v0.1-GGUF/files
   
 **Model size:** 14B  
   
-**Related languages:** Chinese  
+**Related languages:** English, Chinese  
   
 **Context length:** 32K  
   
@@ -181,13 +181,13 @@ https://huggingface.co/Qwen/Qwen1.5-14B-Chat-GGUF
 
   
 #### 3. Qwen1.5-7B  
-**Introduction**: Qwen1.5-7B is a 7 billion parameter scale model of the Tongyi Qianwen large model series developed by Aliyun. We recommend using Q4 and above quantitative models.  
+**Introduction**: Qwen1.5-7B is a 7 billion parameter scale model of the Tongyi Qianwen large model series developed by Aliyun. We recommend using Q2 and above quantitative models.  
   
 **Official website:** https://github.com/QwenLM/Qwen1.5
   
 **Model size:** 7B  
   
-**Related languages:** Chinese  
+**Related languages:** English, Chinese  
   
 **Context length:** 32K  
   
