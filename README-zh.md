@@ -358,7 +358,27 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 4. 在对话面板左下角选择本地LLM!
 ![11.png](images/11.png)
 
-#### 2. Reor
+#### 2. AnythingLLM for Desktop
+![15.png](images/15.png)
+**介绍**：AnythingLLM 可用于无限文档，完全私密，可以使用GPT-4，自定义模型或开源模型如 Llama、Mistral 等，支持 PDF、Word 文档等多种格式。
+
+**官网及下载地址**：https://useanything.com/
+
+**操作系统：** Windows、Mac
+
+**相关语言：** 英文
+
+**使用步骤：**
+1. 下载并安装软件。
+2. 分别设置模型（可以设置OpenAI API、连接LM-Studio等）、Embedding、向量数据库
+	![117.png](images/17.png)![18.png](images/18.png)![19.png](images/19.png)
+1. 设置工作区
+2. 开始对话
+3. 可以在客户端内添加MD、PDF、MP4等文件，或者直接添加网站URL
+4. 将以上文档添加到工作区开始Embedding并进行对话
+	![16.png](images/16.png)
+
+#### 3. Reor
 ![13.jpg](images/13.jpg)
 **介绍**：Reor 是一款由人工智能驱动的桌面笔记应用程序：它会自动链接相关想法、回答笔记中的问题并提供语义搜索。所有内容都存储在本地，用户可以使用类似黑曜石的 Markdown 编辑器来编辑笔记。
 
@@ -376,7 +396,7 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 3. 选择你需要的Embedding模型。**注意：** 一部分地区用户可能因为网络问题无法下载Embedding模型，导致应用无法使用。另外，应用中提供的Embedding模型只擅长处理英文，其他语言不一定适用。
 4. 设置RAG的返回数量。
 
-#### 3. Chat with RTX
+#### 4. Chat with RTX
 ![img.png](images/12.png)
 **介绍**：Chat With RTX 是一款**演示**应用程序，可以将自己的内容（文档、笔记、视频或其他数据）与本地LLM进行交互。Chat With RTX集成了检索增强生成 (RAG)、TensorRT-LLM 和 RTX 加速，用户可以查询自定义聊天机器人以快速获得上下文相关的答案。Chat with RTX 支持各种文件格式，包括文本、pdf、doc/docx 和 xml。只需将应用程序指向包含文件的文件夹，它就会在几秒钟内将它们加载到库中。此外，用户可以提供 YouTube 播放列表的网址，应用程序将加载播放列表中视频的转录，然后查询它们涵盖的内容。
 
