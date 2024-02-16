@@ -405,7 +405,7 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 ----------------  
 Finally, if you are very familiar with local LLM, welcome to join our discussion!
   
-Github:  https://github.com/xue160709/Local-LLM-Interaction-Guideline  
+Github:  https://github.com/xue160709/Local-LLM-User-Guideline  
   
 Discord:  https://discord.gg/4AQuf2ctav
 
