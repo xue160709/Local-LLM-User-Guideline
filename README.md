@@ -310,7 +310,7 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
   
 **Official website and download address**: https://ollama.com/  
   
-**Operating system:** Mac, Linux  
+**Operating system:** Windows, Mac, Linux  
   
 **Related languages:** English  
   
@@ -331,7 +331,7 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 1. Currently Ollama relies on CLI (Command Line Interface), which is more suitable for users with programming skills.  
 2. Importing a model that has been downloaded locally requires a command line import, see https://github.com/ollama/ollama for details.  
 3. The server-side model is not the same as the OpenAI API, which requires the client to be compatible and select the corresponding model.  
-4. If your system is Linux, the processor needs to support AVX2.  
+4. If your system is Windows/Linux, the processor needs to support AVX2.  
   
 *Feel free to share your own good LLM backends with us  
   
@@ -405,8 +405,8 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 ----------------  
 Finally, if you are very familiar with local LLM, welcome to join our discussion!
   
-Github：https://github.com/xue160709/Local-LLM-Interaction-Guideline  
+Github:  https://github.com/xue160709/Local-LLM-Interaction-Guideline  
   
-Discord：https://discord.gg/4AQuf2ctav
+Discord:  https://discord.gg/4AQuf2ctav
 
-Twitter：https://twitter.com/XueZhirong  
+Twitter:  https://twitter.com/XueZhirong  

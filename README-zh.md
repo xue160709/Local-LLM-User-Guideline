@@ -310,7 +310,7 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 
 **官网及下载地址**：https://ollama.com/
 
-**操作系统：** Mac、Linux
+**操作系统：** Windows、Mac、Linux
 
 **相关语言：** 英文
 
@@ -331,7 +331,7 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 1. 目前Ollama依赖于CLI（Command Line Interface），更适合拥有编程能力的用户使用。
 2. 导入本地已经下载好的模型需要命令行导入，详情请看： https://github.com/ollama/ollama 。
 3. 服务端模式跟OpenAI API不一样，需要客户端兼容并选择对应的模型。
-4. 如果你的系统是Linux，处理器需要支持AVX2。
+4. 如果你的系统是Windows/Linux，处理器需要支持AVX2。
 
 *欢迎分享自己使用过不错的LLM后端给我们*
 
