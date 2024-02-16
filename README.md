@@ -87,7 +87,7 @@ The pre-training phase equips the LLMs with a large amount of linguistic and wor
 #### Offline  
 **Online LLMs:** Unavailable  
   
-**Local LLMs:** are functional  
+**Local LLMs:** It works 
 ### 1.5 What are the problems with using online LLMs?  
 When using online LLMs, we face challenges on multiple levels, and these issues, ranging from personal data privacy to model performance and cost to content integrity and the selection and application of retrieval-enhanced generative modeling (RAG) strategies, constitute a set of critical issues that require the joint attention of users and service providers.  
   
