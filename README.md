@@ -153,15 +153,51 @@ Thanks to the open source LLMs provided by Meta, Mistral and many other develope
   
 **Context length:** 32K  
   
-**Applicable to:** For NVIDIA 3090/4090 and larger video memory PC mainframes, M1/M2/M3 Macs with 32GB of RAM and above  
+**Applicable to:** Computers with NVIDIA of 24GB VRAM or above, M1/M2/M3 Macs with 32GB of RAM or above 
   
 **Downloaded at:**  
   
 https://huggingface.co/TheBloke/Mixtral-8x7B-Instruct-v0.1-GGUF/tree/main  
   
 https://modelscope.cn/models/limoncc/Mixtral-8x7B-Instruct-v0.1-GGUF/files  
+
+#### 2. Qwen1.5-14B  
+**Introduction**: Qwen1.5-14B is a 14 billion parameter scale model of the Tongyi Qianwen large model series developed by Aliyun. We recommend using Q5 and above quantitative models.  
   
-#### 2. OpenChat 3.5 0106  
+**Official website:** https://github.com/QwenLM/Qwen1.5
+  
+**Model size:** 14B  
+  
+**Related languages:** Chinese  
+  
+**Context length:** 32K  
+  
+**Applicable to:** Computers with NVIDIA of 12GB VRAM or above, M1/M2/M3 Macs with 16GB of RAM or above
+  
+**Downloaded at:**  
+
+https://huggingface.co/Qwen/Qwen1.5-14B-Chat-GGUF
+  
+
+  
+#### 3. Qwen1.5-7B  
+**Introduction**: Qwen1.5-7B is a 7 billion parameter scale model of the Tongyi Qianwen large model series developed by Aliyun. We recommend using Q4 and above quantitative models.  
+  
+**Official website:** https://github.com/QwenLM/Qwen1.5
+  
+**Model size:** 7B  
+  
+**Related languages:** Chinese  
+  
+**Context length:** 32K  
+  
+**Applicable to:** For most computers  
+  
+**Downloaded at:**  
+
+https://huggingface.co/Qwen/Qwen1.5-7B-Chat-GGUF
+
+#### 4. OpenChat 3.5 0106  
 **Introduction**: OpenChat's January '24 release, fine-tuned from Mistral 7B via C-RLFT, has better performance in inference and bilingual English/Chinese Q&A. We recommend using Q4 and above quantitative models.  
   
 **Official website:** https://github.com/imoneoi/openchat  
@@ -180,7 +216,7 @@ https://huggingface.co/TheBloke/openchat-3.5-0106-GGUF
   
 https://modelscope.cn/models/fivetwin/openchat-3.5-0106-GGUF/files  
   
-#### 3. OpenChat 3.5-16k  
+#### 5. OpenChat 3.5-16k  
 **Introduction**: OpenChat's December '23 release, fine-tuned from Mistral 7B via C-RLFT, has better performance in inference and bilingual English/Chinese Q&A. We recommend using Q4 and above quantitative models.  
   
 **Official website:** https://github.com/imoneoi/openchat  
@@ -199,44 +235,6 @@ https://huggingface.co/TheBloke/openchat_3.5-16k-GGUF/tree/main
   
 https://modelscope.cn/models/limoncc/OPENCHAT3.5-16K-GGUF/files  
   
-  
-#### 4. Qwen 14B  
-**Introduction**: Tongyi Qianwen-14B (Qwen-14B) is a 14 billion parameter scale model of the Tongyi Qianwen large model series developed by Aliyun. We recommend using Q5 and above quantitative models.  
-  
-**Official website:** https://github.com/QwenLM/Qwen  
-  
-**Model size:** 14B  
-  
-**Related languages:** Chinese  
-  
-**Context length:** 8K  
-  
-**Applicable to:** For NVIDIA 3080/4080 and larger video memory PC mainframes, M1/M2/M3 Macs with 16GB of RAM and above  
-  
-**Downloaded at:**  
-  
-https://huggingface.co/Xorbits/Qwen-14B-Chat-GGUF  
-  
-https://modelscope.cn/models/Xorbits/Qwen-14B-Chat-GGUF/summary  
-  
-#### 5. Qwen 7B  
-**Introduction**: Tongyi Qianwen-7B (Qwen-7B) is a 7 billion parameter scale model of the Tongyi Qianwen large model series developed by Aliyun. We recommend using Q4 and above quantitative models.  
-  
-**Official website:** https://github.com/QwenLM/Qwen  
-  
-**Model size:** 7B  
-  
-**Related languages:** Chinese  
-  
-**Context length:** 32K  
-  
-**Applicable to:** For most computers  
-  
-**Downloaded at:**  
-  
-https://huggingface.co/Xorbits/Qwen-7B-Chat-GGUF  
-  
-https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary  
   
 ### How to use local LLM  
 #### 1. LM Studio  

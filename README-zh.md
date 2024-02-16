@@ -143,7 +143,7 @@ RAG的切割方式和回调策略直接影响LLM的效果，特别是在处理�
 *我们推荐使用GGUF版本的量化模型，因为它可以在CPU和消费级GPU环境下单独或者混合使用。欢迎分享自己使用过不错的模型给我们*
 
 #### 1. Mixtral-8x7B-Instruct-v0.1
-**介绍**：Mixtral 8x7B是一个具有开放权重的高质量稀疏专家模型 （SMoE） 混合。我们推荐使用Q3及以上版本的量化模型。
+**介绍**：Mixtral 8x7B是一个具有开放权重的专家模型 （MoE） 混合。我们推荐使用Q3及以上的量化模型。
 
 **官网：** https://mistral.ai/
 
@@ -153,7 +153,7 @@ RAG的切割方式和回调策略直接影响LLM的效果，特别是在处理�
 
 **上下文长度：** 32K
 
-**适用于：** 适用于NVIDIA 3090/4090及更大显存的PC主机、拥有32GB内存及以上的M1/M2/M3 Mac
+**适用于：** 拥有24GB显存及以上的英伟达显卡电脑、拥有16GB内存及以上的M1/M2/M3 Mac
 
 **下载地址：**
 
@@ -161,7 +161,43 @@ https://huggingface.co/TheBloke/Mixtral-8x7B-Instruct-v0.1-GGUF/tree/main
 
 https://modelscope.cn/models/limoncc/Mixtral-8x7B-Instruct-v0.1-GGUF/files
 
-#### 2. OpenChat 3.5 0106 
+
+#### 2. Qwen1.5-14B
+**介绍**：Qwen1.5-14B是阿里云研发的通义千问大模型系列的140亿参数规模的模型。我们推荐使用Q5及以上量化模型。
+
+**官网：** https://github.com/QwenLM/Qwen1.5
+
+**模型大小：** 14B
+
+**相关语言：** 中文
+
+**上下文长度：** 32k
+
+**适用于：** 拥有12GB显存及以上的英伟达显卡电脑、拥有16GB内存及以上的M1/M2/M3 Mac
+
+**下载地址：**
+
+https://huggingface.co/Qwen/Qwen1.5-14B-Chat-GGUF
+
+#### 3. Qwen1.5-7B
+**介绍**：Qwen1.5-7B是阿里云研发的通义千问大模型系列的70亿参数规模的模型。我们推荐使用Q4及以上量化模型。
+
+**官网：** https://github.com/QwenLM/Qwen1.5
+
+**模型大小：** 7B
+
+**相关语言：** 中文
+
+**上下文长度：** 32K
+
+**适用于：** 适用于大部分电脑
+
+**下载地址：**
+
+https://huggingface.co/Qwen/Qwen1.5-7B-Chat-GGUF
+
+
+#### 4. OpenChat 3.5 0106 
 **介绍**：OpenChat在24年1月份的版本，通过 C-RLFT 在Mistral 7B的基础上进行微调，在推理和中英文双语问答上有较好的表现。我们推荐使用Q4及以上量化模型。
 
 **官网：** https://github.com/imoneoi/openchat
@@ -180,7 +216,7 @@ https://huggingface.co/TheBloke/openchat-3.5-0106-GGUF
 
 https://modelscope.cn/models/fivetwin/openchat-3.5-0106-GGUF/files
 
-#### 3. OpenChat 3.5-16k 
+#### 5. OpenChat 3.5-16k 
 **介绍**：OpenChat在23年12月份的版本，通过 C-RLFT 在Mistral 7B的基础上进行微调，在推理和中英文双语问答上有较好的表现。我们推荐使用Q4及以上量化模型。
 
 **官网：** https://github.com/imoneoi/openchat
@@ -200,43 +236,6 @@ https://huggingface.co/TheBloke/openchat_3.5-16k-GGUF/tree/main
 https://modelscope.cn/models/limoncc/OPENCHAT3.5-16K-GGUF/files
 
 
-#### 4. Qwen 14B
-**介绍**：通义千问-14B（Qwen-14B）是阿里云研发的通义千问大模型系列的140亿参数规模的模型。我们推荐使用Q5及以上量化模型。
-
-**官网：** https://github.com/QwenLM/Qwen
-
-**模型大小：** 14B
-
-**相关语言：** 中文
-
-**上下文长度：** 8K
-
-**适用于：** 适用于NVIDIA 3080/4080及更大显存的PC主机、拥有16GB内存及以上的M1/M2/M3 Mac
-
-**下载地址：**
-
-https://huggingface.co/Xorbits/Qwen-14B-Chat-GGUF
-
-https://modelscope.cn/models/Xorbits/Qwen-14B-Chat-GGUF/summary
-
-#### 5. Qwen 7B
-**介绍**：通义千问-7B（Qwen-7B）是阿里云研发的通义千问大模型系列的70亿参数规模的模型。我们推荐使用Q4及以上量化模型。
-
-**官网：** https://github.com/QwenLM/Qwen
-
-**模型大小：** 7B
-
-**相关语言：** 中文
-
-**上下文长度：** 32K
-
-**适用于：** 适用于大部分电脑
-
-**下载地址：**
-
-https://huggingface.co/Xorbits/Qwen-7B-Chat-GGUF
-
-https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 
 ### 如何开启本地LLM
 #### 1. LM Studio
