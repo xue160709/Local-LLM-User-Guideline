@@ -431,4 +431,5 @@ Discord：https://discord.gg/4AQuf2ctav
 
 Twitter：https://twitter.com/XueZhirong
 
-微信：xuezhirong233
+微信：
+![wechat.png](images/wechat.png)
