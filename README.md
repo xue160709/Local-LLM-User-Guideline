@@ -162,7 +162,7 @@ https://huggingface.co/TheBloke/Mixtral-8x7B-Instruct-v0.1-GGUF/tree/main
 https://modelscope.cn/models/limoncc/Mixtral-8x7B-Instruct-v0.1-GGUF/files  
 
 #### 2. Qwen1.5-14B  
-**Introduction**: Qwen1.5-14B is a 14 billion parameter scale model of the Tongyi Qianwen large model series developed by Aliyun. We recommend using Q5 and above quantitative models.  
+**Introduction**: Qwen1.5-14B is a 14 billion parameter scale model of the Tongyi Qianwen large model series developed by Aliyun. We recommend using Q2 and above quantitative models.  
   
 **Official website:** https://github.com/QwenLM/Qwen1.5
   
