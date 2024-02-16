@@ -372,10 +372,10 @@ https://modelscope.cn/models/Xorbits/Qwen-7B-Chat-GGUF/summary
 1. Download and install the software.
 2. Set up the model (you can set up OpenAI API, connect to LM-Studio, etc.), Embedding, and vector database respectively.
 ![117.png](images/17.png)![18.png](images/18.png)![19.png](images/19.png)
-1. Set up your workspace
-2. Start a conversation
-3. You can add MD, PDF, MP4 and other files in the client, or directly add the website URL
-4. Add the above document to the workspace to start Embedding and have a conversation
+3. Set up your workspace.
+4. Start a conversation.
+5. You can add MD, PDF, MP4 and other files in the client, or directly add the website URL.
+6. Add the above document to the workspace to start Embedding and have a conversation.
 ![16.png](images/16.png)
 
 #### 3.Reor
