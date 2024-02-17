@@ -2,7 +2,7 @@
 
 如果你对本地LLM非常熟悉，欢迎加入我们的讨论！Discord：https://discord.gg/4AQuf2ctav
 
-# 本地LLM使用指南
+# 本地LLM使用指南 0.1
 ## 1. 背景介绍
 
 ### 1.1 什么是LLMs？

@@ -2,7 +2,7 @@
 
 If you are very familiar with local LLM, welcome to join our discussion! Discord: https://discord.gg/4AQuf2ctav
 
-# Local LLM User Guide  
+# Local LLM User Guide 0.1
 ## 1. Background  
   
 ### 1.1 What are LLMs?  
