@@ -2,7 +2,13 @@
 
 If you are very familiar with local LLM, welcome to join our discussion! Discord: https://discord.gg/4AQuf2ctav
 
-# Local LLM User Guide 0.1
+### Updated
+
+**2024-2-24**: Version 0.2 adds an introduction to the Gemma and Llava models, an introduction to the GPT4ALL software, and an introduction to LLM selection.
+
+**2024-2-17**: Version 0.1.
+
+# Local LLM User Guide 0.2
 ## 1. Background  
   
 ### 1.1 What are LLMs?  
@@ -504,15 +510,27 @@ https://modelscope.cn/models/CruiseTian/gemma-2b-gguf-quantized/summary
 2. Currently Chat with RTX requires NVIDIA GeForce™ RTX 30 or 40 series GPUs or NVIDIA RTX™ Ampere or Ada Generation GPUs with at least 8GB of VRAM and 16GB of RAM.  
 3. The size of the demo application installation package is up to 35GB.  
   
-#### 3. To be added  
+#### 5. To be added  
 *There are very few native LLM-compatible clients in the world, so we welcome your recommendations or self-recommendations.  
-  
-  
-## 4. What do I need to be aware of when using local LLMs?  
-#### 1. How can I choose an LLM and make it run faster?  
-#### 2. What are the current recurring problems with LLM?  
-#### 3. What can LLM currently do?  
-#### 4. TBD  
+
+
+## 4. What should you pay attention to when using local LLMs?
+#### 1. First you need to know the following points:
+1. LLMs of different training sizes will make errors, even GPT-5.
+2. LLM with different training scales determines its own inference level. For example, the 13B LLM model is better than the 2B LLM model, but the quality of tasks completed by the small model can be improved through fine-tuning.
+3. After the LLM model is quantized, the smaller the volume, the worse the accuracy will be. For example, Q2 < Q8.
+4. Currently, the best devices for running LLM are NVIDIA GPUs or M1 and above Macs. If your computer has an AMD or Intel GPU, you can currently only use the CPU to run LLM.
+5. It is fastest to load all LLM models into the GPU and run them.
+
+#### 2. How to make LLM run efficiently?
+1. **8G and below GPU**: 2B-LLM + 4~8k Token or 7B-LLM + 2~4k Token.
+2. **8-12GB GPU**: 7B-LLM + 4k~6k Token or 14B-LLM + 2~4k Token.
+3. **12-24GB GPU-**: 7B-LLM + 8~12k Token or 14B-LLM + 4~8k Token.
+
+Note: The final LLM model volume + the video memory occupied by the context < GPU video memory, otherwise the speed will be slower (for example, an 8k context will occupy 6~10G of video memory). You can choose different quantization models according to your needs to reduce the volume of the LLM model. 
+#### 3. What are the current recurring problems with LLM?  
+#### 4. What can LLM currently do?  
+#### 5. TBD  
   
 ## TBD  
 ----------------  

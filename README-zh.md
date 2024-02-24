@@ -2,7 +2,13 @@
 
 如果你对本地LLM非常熟悉，欢迎加入我们的讨论！Discord：https://discord.gg/4AQuf2ctav
 
-# 本地LLM使用指南 0.1
+### 更新日期
+
+**2024-2-24**：0.2版本增加了Gemma和Llava模型介绍，增加了GPT4ALL软件介绍，增加了LLM选型介绍。
+
+**2024-2-17**：0.1版本。
+
+# 本地LLM使用指南 0.2
 ## 1. 背景介绍
 
 ### 1.1 什么是LLMs？
@@ -508,18 +514,29 @@ https://modelscope.cn/models/CruiseTian/gemma-2b-gguf-quantized/summary
 2. 目前Chat with RTX要求NVIDIA GeForce™ RTX 30 或 40 系列 GPU 或 NVIDIA RTX™ Ampere 或 Ada Generation GPU，具有至少 8GB VRAM 和 16GB RAM。
 3. 演示应用程序安装包体积高达35GB。
 
-#### 4. 待补充
+#### 5. 待补充
 *目前全球范围内可以兼容本地LLM的客户端极少，欢迎各位推荐或自荐*
 
 
 ## 4. 使用本地LLMs需要注意什么？
-#### 1. 如何选择LLM并让其运行速度更快？
+#### 1. 首先你需要知道以下几点：
+1. 不同训练规模的LLM都会出错，即使是GPT-5。
+2. 不同训练规模的LLM决定了它的自身推理水平，例如13B优于2B的LLM模型，但是可以通过微调来提升小模型完成任务的质量。
+3. LLM模型被量化后，体积越小，精度也会越差，例如Q2 < Q8。
+4. 目前运行LLM的最佳设备是英伟达GPU或者M1及以上的Mac，如果你的电脑是AMD或者Intel的GPU，目前只能用CPU来运行LLM。
+5. LLM模型全部加载到GPU并运行是最快的。
 
+#### 2. 如何让LLM高效运行？
+1. **8G及以下的GPU**：2B-LLM + 4~8k Token或者7B-LLM + 2~4k Token。
+2. **8-12GB的GPU**：7B-LLM + 4k~6k Token或者14B-LLM + 2~4k Token。
+3. **12-24GB的GPU-**：7B-LLM + 8~12k Token或者14B-LLM + 4~8k Token。
 
-#### 2. 当前LLM经常出现的问题有哪些？
-#### 3. 目前LLM能做什么？
-#### 4. 如何本地使用RAG？
-#### 5. 目前本地RAG是否可用？
+注意：最终LLM模型体积 + 上下文占用的显存 < GPU显存，否则速度会变慢（例如8k上下文会占用到6~10G的显存），你可以根据自己需求适当选择不同量化模型来减少LLM模型的体积。
+
+#### 3. 当前LLM经常出现的问题有哪些？
+#### 4. 目前LLM能做什么？
+#### 5. 如何本地使用RAG？
+#### 6. 目前本地RAG是否可用？
 
 ## TBD
 ----------------
