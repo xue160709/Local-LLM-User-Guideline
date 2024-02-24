@@ -143,13 +143,13 @@ Thanks to the open source LLMs provided by Meta, Mistral and many other develope
 *We recommend using the GGUF version of the quantization model as it can be used alone or in a mix of CPU and consumer GPU environments. Feel free to share with us models that you have used well*.  
   
 #### 1. Mixtral-8x7B-Instruct-v0.1  
-**Introduction** : Mixtral 8x7B is a high quality Sparse Model of Expertise (SMoE) blend with open weights. We recommend using the Q3 and higher versions of the quantization model.  
+**Introduction:** Mixtral 8x7B is a high quality Sparse Model of Expertise (SMoE) blend with open weights. We recommend using the Q3 and higher versions of the quantization model.  
   
 **Official website:** https://mistral.ai/  
   
 **Model size:** 8x7B  
   
-**Related languages:** English  
+**Related languages:** Multi-language  
   
 **Context length:** 32K  
   
@@ -162,7 +162,7 @@ https://huggingface.co/TheBloke/Mixtral-8x7B-Instruct-v0.1-GGUF/tree/main
 https://modelscope.cn/models/limoncc/Mixtral-8x7B-Instruct-v0.1-GGUF/files  
 
 #### 2. Qwen1.5-14B  
-**Introduction**: Qwen1.5-14B is a 14 billion parameter scale model of the Tongyi Qianwen large model series developed by Aliyun. We recommend using Q2 and above quantitative models.  
+**Introduction:** Qwen1.5-14B is a 14 billion parameter scale model of the Tongyi Qianwen large model series developed by Aliyun. We recommend using Q2 and above quantitative models.  
   
 **Official website:** https://github.com/QwenLM/Qwen1.5
   
@@ -177,11 +177,12 @@ https://modelscope.cn/models/limoncc/Mixtral-8x7B-Instruct-v0.1-GGUF/files
 **Downloaded at:**  
 
 https://huggingface.co/Qwen/Qwen1.5-14B-Chat-GGUF
-  
+
+https://modelscope.cn/models/qwen/Qwen1.5-14B-Chat-GGUF/summary
 
   
 #### 3. Qwen1.5-7B  
-**Introduction**: Qwen1.5-7B is a 7 billion parameter scale model of the Tongyi Qianwen large model series developed by Aliyun. We recommend using Q2 and above quantitative models.  
+**Introduction:** Qwen1.5-7B is a 7 billion parameter scale model of the Tongyi Qianwen large model series developed by Aliyun. We recommend using Q2 and above quantitative models.  
   
 **Official website:** https://github.com/QwenLM/Qwen1.5
   
@@ -191,14 +192,17 @@ https://huggingface.co/Qwen/Qwen1.5-14B-Chat-GGUF
   
 **Context length:** 32K  
   
-**Applicable to:** For most computers  
+**Applicable to:** It is suitable for most computers, but it is recommended for computers with NVIDIA graphics cards of 12GB of video memory and above, and M1/M2/M3 Macs with 16GB of memory and above.  
   
 **Downloaded at:**  
 
 https://huggingface.co/Qwen/Qwen1.5-7B-Chat-GGUF
 
+https://modelscope.cn/models/qwen/Qwen1.5-7B-Chat-GGUF/summary
+
+
 #### 4. OpenChat 3.5 0106  
-**Introduction**: OpenChat's January '24 release, fine-tuned from Mistral 7B via C-RLFT, has better performance in inference and bilingual English/Chinese Q&A. We recommend using Q4 and above quantitative models.  
+**Introduction:** OpenChat's January '24 release, fine-tuned from Mistral 7B via C-RLFT, has better performance in inference and bilingual English/Chinese Q&A. We recommend using Q4 and above quantitative models.  
   
 **Official website:** https://github.com/imoneoi/openchat  
   
@@ -208,7 +212,7 @@ https://huggingface.co/Qwen/Qwen1.5-7B-Chat-GGUF
   
 **Context length:** 8K  
   
-**Applicable to:** For most computers  
+**Applicable to:** It is suitable for most computers, but it is recommended for computers with NVIDIA graphics cards of 12GB of video memory and above, and M1/M2/M3 Macs with 16GB of memory and above.
   
 **Downloaded at:**  
   
@@ -217,7 +221,7 @@ https://huggingface.co/TheBloke/openchat-3.5-0106-GGUF
 https://modelscope.cn/models/fivetwin/openchat-3.5-0106-GGUF/files  
   
 #### 5. OpenChat 3.5-16k  
-**Introduction**: OpenChat's December '23 release, fine-tuned from Mistral 7B via C-RLFT, has better performance in inference and bilingual English/Chinese Q&A. We recommend using Q4 and above quantitative models.  
+**Introduction:** OpenChat's December '23 release, fine-tuned from Mistral 7B via C-RLFT, has better performance in inference and bilingual English/Chinese Q&A. We recommend using Q4 and above quantitative models.  
   
 **Official website:** https://github.com/imoneoi/openchat  
   
@@ -227,13 +231,72 @@ https://modelscope.cn/models/fivetwin/openchat-3.5-0106-GGUF/files
   
 **Context length:** 16K  
   
-**Applicable to:** For most computers  
+**Applicable to:** It is suitable for most computers, but it is recommended for computers with NVIDIA graphics cards of 12GB of video memory and above, and M1/M2/M3 Macs with 16GB of memory and above.  
   
 **Downloaded at:**  
   
 https://huggingface.co/TheBloke/openchat_3.5-16k-GGUF/tree/main  
   
 https://modelscope.cn/models/limoncc/OPENCHAT3.5-16K-GGUF/files  
+
+#### 6. llava 1.6  
+**Introduction:** LLaVA is a multimodal model for chatbots with computer vision and natural processing capabilities that can analyze images and provide feedback with text.  
+  
+**Model size:** 7B  
+  
+**Related languages:** English  
+  
+**Context length:** 32K  
+  
+**Applicable to:** It is suitable for most computers, but it is recommended for computers with NVIDIA graphics cards of 12GB of video memory and above, and M1/M2/M3 Macs with 16GB of memory and above.  
+  
+**Downloaded at:**  
+  
+https://huggingface.co/cmp-nct/llava-1.6-gguf/
+
+https://modelscope.cn/models/mirror013/llava-1.6-mistral-7b-gguf/summary
+
+#### 7. Gemma-7b-it  
+**Introduction:** Gemma is a family of lightweight, state-of-the-art open models from Google, built from the same research and technology used to create the Gemini models. They are text-to-text, decoder-only large language models, available in English, with open weights, pre-trained variants, and instruction-tuned variants.
+  
+**Official website:** https://huggingface.co/google/gemma-7b-it 
+  
+**Model size:** 7B  
+  
+**Related languages:** Multi-language  
+  
+**Context length:** 8K  
+  
+**Applicable to:** It is suitable for most computers, but it is recommended for computers with NVIDIA graphics cards of 12GB of video memory and above, and M1/M2/M3 Macs with 16GB of memory and above.  
+
+**Note:** There will be bugs when using quantitative models below Q8 on llama.cpp.
+  
+**Downloaded at:**  
+  
+https://huggingface.co/sayhan/gemma-7b-it-GGUF-quantized
+
+https://modelscope.cn/models/fivetwin/gemma-7b-it-gguf/summary
+
+#### 8. Gemma-2b-it  
+**Introduction:** Gemma is a family of lightweight, state-of-the-art open models from Google, built from the same research and technology used to create the Gemini models. They are text-to-text, decoder-only large language models, available in English, with open weights, pre-trained variants, and instruction-tuned variants. 
+  
+**Official website:** https://huggingface.co/google/gemma-2b-it
+  
+**Model size:** 2B  
+  
+**Related languages:** Multi-language
+  
+**Context length:** 8K  
+  
+**Applicable to:** It is suitable for most computers. 
+
+**Note:** There will be bugs when using quantitative models below Q8 on llama.cpp.
+  
+**Downloaded at:**  
+  
+https://huggingface.co/lmstudio-ai/gemma-2b-it-GGUF
+
+https://modelscope.cn/models/CruiseTian/gemma-2b-gguf-quantized/summary
   
   
 ### How to use local LLM  
@@ -242,14 +305,14 @@ https://modelscope.cn/models/limoncc/OPENCHAT3.5-16K-GGUF/files
   
 **Introduction**: LM Studio develops a set of friendly user interfaces based on LLama.cpp, supports installation and use on Windows, Mac and Linux systems, provides models in multiple languages, and offers features such as model search, download and chat.  
   
-**Official website and download address**: https://lmstudio.ai/  
+**Official website and download url**: https://lmstudio.ai/  
   
 **Operating systems:** Windows, Mac, Linux  
   
 **Related languages:** English  
   
 **Steps for use:**  
-1. Download and install the software  
+1. Download and install the software.  
 2. Download the model in the application, if you can't download the model due to network or other circumstances, you can select the folder where the LLM is stored and create a new folder named \"TheBloke\" in the folder, then put the downloaded model into the \"TheBloke\" folder. Then put the downloaded models into \"TheBloke\" folder.  
 ![2.png](images/2.png)  
 3. Click \"Select a model to load\" to select a model to open the dialog mode, you can also select the corresponding \"GPU Acceleration\" and \"Context Length\" according to your own computer and model to reload the model. \"Context Length\" according to your computer and model to reload the model. (If your computer configuration is average, it is recommended to uncheck \"GPU Offload\", and the larger the \"Context Length\" setting, the longer the waiting time will be, please refer to the fourth part of the guide for a more detailed introduction.)  
@@ -257,11 +320,12 @@ https://modelscope.cn/models/limoncc/OPENCHAT3.5-16K-GGUF/files
 4. If server-side mode is enabled, load the model and fill in the port (e.g. 8000) and click \"Start Server\" to run. Remember that client-server communication must be compatible with OpenAI API mode.  
 ![4.png](images/4.png)  
   
-**Merits:**  
+**Advantage:**  
 1. The overall use process is friendly to the average user.  
 2. Models can be easily switched.  
 3. The degree of mixing of CPU and GPU can be easily selected.  
 4. Preset can be easily switched.  
+5. Compatible with multi-modal models, images can be queried directly in the interface.
   
 **Note:**  
 1. Always remember to reload the model manually after switching models or setting parameters.  
@@ -284,14 +348,14 @@ https://modelscope.cn/models/limoncc/OPENCHAT3.5-16K-GGUF/files
 **Related languages:** English  
   
 **Steps for use:**  
-1. Downloading documents  
+1. Downloading file.  
 2. If you are a macOS or Linux user, open a computer terminal and grant the computer permission to execute this new file `chmod +x llava-v1.5-7b-q4.llamafile`, then run the llama file `. /llava-v1.5-7b-q4.llamafile -ngl 9999`. (Remember to enter the corresponding folder before typing the command, \"llava-v1.5-7b-q4.llamafile\" is the name of the file you downloaded)  
 3. If you are a Windows user, you can rename the file by adding \".exe\" to the end of the file.  
 4. Your browser should automatically open and display the chat screen. (If not, just open your browser and point it to http://127.0.0.1:8080/)  
 5. When you have finished chatting, go back to your terminal and click `Control-C` to close llamafile, or just close the cmd window.  
 6. In addition, when you turn on llamafile, server-side mode is automatically enabled, so you can communicate with the client by filling in http://127.0.0.1:8080/. Remember that client-server communication must be compatible with OpenAI API mode.  
   
-**Merits:**  
+**Advantage:**  
 1. Download the file and use it directly.  
 2. Directly enter server-side mode after opening the application.  
 3. You can start the application and server mode at boot time by setting it from the command line.  
@@ -302,24 +366,54 @@ https://modelscope.cn/models/limoncc/OPENCHAT3.5-16K-GGUF/files
 3. Importing a model that has been downloaded locally requires repackaging another llamafile.  
 4. Changing the model during use is equivalent to opening another file, which is not very convenient to operate.  
 5. If your system is Windows/Linux, the processor needs to support AVX2.  
+
+#### 3. GPT4All
+![20.png](images/20.png)
+**Introduction**: A free-to-use, locally running, privacy-aware chatbot that requires no GPU or internet.
+
+**Official website and download url**: https://gpt4all.io/
+
+**Operating System:** Windows, Mac, Linux
+
+**Related languages:** English
+
+**Steps for use:**
+1. Download and install the software.
+2. Select the model storage path.
+3. Download LLMs and RAG models (if there are models in the model storage path, you can use them directly).
+4. Select the model at the top of the application to start the conversation.
+5. If you need to turn on the Server mode, just click the Wifi icon, but the port cannot be viewed or modified. The port in Server mode is 4891, and the complete URL is: http://127.0.0.1:4891.
+
+**Advantage:**  
+1. Support RAG function.
+2. You can choose the degree of mixing of CPU and GPU.
+
+**Precautions:**
+1. The port (4891) in Server mode cannot be viewed and modified within the application.
+2. GPT4All may not be compatible with the complete OpenAI API mode, and some clients cannot receive data.
+3. It does not support startup at the moment.
+4. Automatically entering server mode is not supported for the time being.
+5. Automatic selection of RAG’s local folder is not supported for the time being.
+6. If your system is Windows/Linux, the processor needs to support AVX2.
+7. The user experience needs to be improved.
   
-#### 3. Ollama  
+#### 4. Ollama  
 **Introduction**: Ollama is a lightweight, extensible framework based on LLama.cpp for building and running language models locally.  
   
-**Official website and download address**: https://ollama.com/  
+**Official website and download url**: https://ollama.com/  
   
 **Operating system:** Windows, Mac, Linux  
   
 **Related languages:** English  
   
 **Steps for use:**  
-1. Download and open the implementation file  
+1. Download and open the implementation file.  
 2. After successful installation you will be prompted to run the model within cmd, e.g. `ollama run mistral` (if you have not downloaded the model it will be downloaded automatically).  
 ![6.png](images/6.png)  
 ![7.png](images/7.png)  
 3. Start a dialog in cmd  
   
-**Merits:**  
+**Advantage:**  
 1. Support for boot-up.  
 2. Directly enter server-side mode after opening the application.  
 3. Models can be downloaded directly from the command line.  
@@ -339,7 +433,7 @@ https://modelscope.cn/models/limoncc/OPENCHAT3.5-16K-GGUF/files
   
 **Introduction**: MiX Copilot is a PC client that supports OpenAI and local LLMs for automatically crawling, organizing and analyzing information (data are saved locally as Markdown to avoid privacy leakage), supporting multiple Chatbot conversations at the same time, browsing web pages + using LLMs, making LLM workflows (including customized Prompt, querying web pages) and other functions.  
   
-**Official website and download address**: https://www.mix-copilot.com/  
+**Official website and download url**: https://www.mix-copilot.com/  
   
 **Operating systems:** Windows, Mac  
   
@@ -360,7 +454,7 @@ https://modelscope.cn/models/limoncc/OPENCHAT3.5-16K-GGUF/files
 ![15.png](images/15.png)
 **Introduction**: AnythingLLM can be used for unlimited documents, completely private, can use GPT-4, custom models or open source models such as Llama, Mistral, etc., and supports multiple formats such as PDF, Word documents, etc.
 
-**Official website and download address**: https://useanything.com/
+**Official website and download url**: https://useanything.com/
 
 **Operating System:** Windows, Mac
 
@@ -376,11 +470,12 @@ https://modelscope.cn/models/limoncc/OPENCHAT3.5-16K-GGUF/files
 6. Add the above document to the workspace to start Embedding and have a conversation.
 ![16.png](images/16.png)
 
+
 #### 3.Reor
 ![13.jpg](images/13.jpg)
 **Introduction**: Reor is a desktop note-taking app powered by artificial intelligence: it automatically links related ideas, answers questions in notes, and provides semantic search. All content is stored locally, and users can edit notes using a Markdown editor like Obsidian.
 
-**Official website and download address**: https://www.reorproject.org/
+**Official website and download url**: https://www.reorproject.org/
 
 **Operating System:** Windows, Mac
 
@@ -398,7 +493,7 @@ https://modelscope.cn/models/limoncc/OPENCHAT3.5-16K-GGUF/files
 ![img.png](images/12.png)  
 **Introduction**:Chat With RTX is a **demo** application that allows you to interact your own content (documents, notes, videos, or other data) with native LLM.Chat With RTX integrates Retrieval Augmented Generation (RAG), TensorRT-LLM, and RTX Acceleration, which allows users to query a custom chatbot to quickly get Chat with RTX supports a variety of file formats including text, pdf, doc/docx, and xml. simply point the application to the folder containing the files and it will load them into the library in seconds. Additionally, users can provide the URL of a YouTube playlist and the application will load transcriptions of the videos in the playlist and then look up what they cover.  
   
-**Official website and download address**: https://www.nvidia.com/en-us/ai-on-rtx/chat-with-rtx-generative-ai/  
+**Official website and download url**: https://www.nvidia.com/en-us/ai-on-rtx/chat-with-rtx-generative-ai/  
   
 **Operating system:** Windows  
   

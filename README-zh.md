@@ -143,13 +143,13 @@ RAG的切割方式和回调策略直接影响LLM的效果，特别是在处理�
 *我们推荐使用GGUF版本的量化模型，因为它可以在CPU和消费级GPU环境下单独或者混合使用。欢迎分享自己使用过不错的模型给我们*
 
 #### 1. Mixtral-8x7B-Instruct-v0.1
-**介绍**：Mixtral 8x7B是一个具有开放权重的专家模型 （MoE） 混合。我们推荐使用Q3及以上的量化模型。
+**介绍：** Mixtral 8x7B是一个具有开放权重的专家模型 （MoE） 混合。我们推荐使用Q3及以上的量化模型。
 
 **官网：** https://mistral.ai/
 
 **模型大小：** 8x7B
 
-**相关语言：** 英文
+**相关语言：** 多语言
 
 **上下文长度：** 32K
 
@@ -163,7 +163,7 @@ https://modelscope.cn/models/limoncc/Mixtral-8x7B-Instruct-v0.1-GGUF/files
 
 
 #### 2. Qwen1.5-14B
-**介绍**：Qwen1.5-14B是阿里云研发的通义千问大模型系列的140亿参数规模的模型。我们推荐使用Q2及以上量化模型。
+**介绍：** Qwen1.5-14B是阿里云研发的通义千问大模型系列的140亿参数规模的模型。我们推荐使用Q2及以上量化模型。
 
 **官网：** https://github.com/QwenLM/Qwen1.5
 
@@ -179,8 +179,10 @@ https://modelscope.cn/models/limoncc/Mixtral-8x7B-Instruct-v0.1-GGUF/files
 
 https://huggingface.co/Qwen/Qwen1.5-14B-Chat-GGUF
 
+https://modelscope.cn/models/qwen/Qwen1.5-14B-Chat-GGUF/summary
+
 #### 3. Qwen1.5-7B
-**介绍**：Qwen1.5-7B是阿里云研发的通义千问大模型系列的70亿参数规模的模型。我们推荐使用Q2及以上量化模型。
+**介绍：** Qwen1.5-7B是阿里云研发的通义千问大模型系列的70亿参数规模的模型。我们推荐使用Q2及以上量化模型。
 
 **官网：** https://github.com/QwenLM/Qwen1.5
 
@@ -190,15 +192,17 @@ https://huggingface.co/Qwen/Qwen1.5-14B-Chat-GGUF
 
 **上下文长度：** 32K
 
-**适用于：** 适用于大部分电脑
+**适用于：** 适用于大部分电脑，但建议拥有12GB显存及以上的英伟达显卡电脑、拥有16GB内存及以上的M1/M2/M3 Mac
 
 **下载地址：**
 
 https://huggingface.co/Qwen/Qwen1.5-7B-Chat-GGUF
 
+https://modelscope.cn/models/qwen/Qwen1.5-7B-Chat-GGUF/summary
+
 
 #### 4. OpenChat 3.5 0106 
-**介绍**：OpenChat在24年1月份的版本，通过 C-RLFT 在Mistral 7B的基础上进行微调，在推理和中英文双语问答上有较好的表现。我们推荐使用Q4及以上量化模型。
+**介绍：** OpenChat在24年1月份的版本，通过 C-RLFT 在Mistral 7B的基础上进行微调，在推理和中英文双语问答上有较好的表现。我们推荐使用Q4及以上量化模型。
 
 **官网：** https://github.com/imoneoi/openchat
 
@@ -208,7 +212,7 @@ https://huggingface.co/Qwen/Qwen1.5-7B-Chat-GGUF
 
 **上下文长度：** 8K
 
-**适用于：** 适用于大部分电脑
+**适用于：** 适用于大部分电脑，但建议拥有12GB显存及以上的英伟达显卡电脑、拥有16GB内存及以上的M1/M2/M3 Mac
 
 **下载地址：**
 
@@ -217,7 +221,7 @@ https://huggingface.co/TheBloke/openchat-3.5-0106-GGUF
 https://modelscope.cn/models/fivetwin/openchat-3.5-0106-GGUF/files
 
 #### 5. OpenChat 3.5-16k 
-**介绍**：OpenChat在23年12月份的版本，通过 C-RLFT 在Mistral 7B的基础上进行微调，在推理和中英文双语问答上有较好的表现。我们推荐使用Q4及以上量化模型。
+**介绍：** OpenChat在23年12月份的版本，通过 C-RLFT 在Mistral 7B的基础上进行微调，在推理和中英文双语问答上有较好的表现。我们推荐使用Q4及以上量化模型。
 
 **官网：** https://github.com/imoneoi/openchat
 
@@ -227,7 +231,7 @@ https://modelscope.cn/models/fivetwin/openchat-3.5-0106-GGUF/files
 
 **上下文长度：** 16K
 
-**适用于：** 适用于大部分电脑
+**适用于：** 适用于大部分电脑，但建议拥有12GB显存及以上的英伟达显卡电脑、拥有16GB内存及以上的M1/M2/M3 Mac
 
 **下载地址：**
 
@@ -235,6 +239,68 @@ https://huggingface.co/TheBloke/openchat_3.5-16k-GGUF/tree/main
 
 https://modelscope.cn/models/limoncc/OPENCHAT3.5-16K-GGUF/files
 
+
+#### 6. llava 1.6
+**介绍：** LLaVA 是用于聊天机器人的多模态模型，拥有计算机视觉和自然处理能力，可以分析图片并用文字进行反馈。
+
+**模型大小：** 7B
+
+**相关语言：** 英文
+
+**上下文长度：** 32K
+
+**适用于：** 适用于大部分电脑，但建议拥有12GB显存及以上的英伟达显卡电脑、拥有16GB内存及以上的M1/M2/M3 Mac
+
+**注意事项：** 下载文件时除了量化模型，还要下载配置文件以及对应的mmproj模型，这些文件夹需要放在同一个文件夹内。
+
+**下载地址：**
+
+https://huggingface.co/cmp-nct/llava-1.6-gguf/
+
+https://modelscope.cn/models/mirror013/llava-1.6-mistral-7b-gguf/summary
+
+
+#### 7. Gemma-7b-it
+**介绍：** Gemma 是 Google 推出的一系列轻量级、最先进的开放模型，采用与创建 Gemini 模型相同的研究和技术构建。它们是文本到文本、仅限解码器的大型语言模型，提供英语版本，具有开放权重、预训练变体和指令调整变体。
+
+**官网：** https://huggingface.co/google/gemma-7b-it
+
+**模型大小：** 7B
+
+**相关语言：** 多语言
+
+**上下文长度：** 8K
+
+**适用于：** 适用于大部分电脑，但建议拥有12GB显存及以上的英伟达显卡电脑、拥有16GB内存及以上的M1/M2/M3 Mac
+
+**注意事项：** 在llama.cpp上使用Q8以下的量化模型会有Bug。
+
+**下载地址：**
+
+https://huggingface.co/sayhan/gemma-7b-it-GGUF-quantized
+
+https://modelscope.cn/models/fivetwin/gemma-7b-it-gguf/summary
+
+#### 8. Gemma-2b-it 
+**介绍：** Gemma 是 Google 推出的一系列轻量级、最先进的开放模型，采用与创建 Gemini 模型相同的研究和技术构建。它们是文本到文本、仅限解码器的大型语言模型，提供英语版本，具有开放权重、预训练变体和指令调整变体。
+
+**官网：** https://huggingface.co/google/gemma-2b-it
+
+**模型大小：** 2B
+
+**相关语言：** 多语言
+
+**上下文长度：** 8K
+
+**适用于：** 适用于大部分电脑
+
+**注意事项：** 在llama.cpp上使用Q8以下的量化模型会有Bug。
+
+**下载地址：**
+
+https://huggingface.co/lmstudio-ai/gemma-2b-it-GGUF
+
+https://modelscope.cn/models/CruiseTian/gemma-2b-gguf-quantized/summary
 
 
 ### 如何开启本地LLM
@@ -250,7 +316,7 @@ https://modelscope.cn/models/limoncc/OPENCHAT3.5-16K-GGUF/files
 **相关语言：** 英文
 
 **使用步骤：**
-1. 下载并安装软件
+1. 下载并安装软件。
 2. 在应用内下载模型，如果因网络等情况无法下载，可以选择存放LLM的文件夹后并在文件夹里新建一个名为“TheBloke”的文件夹，然后将下载过的模型放进“TheBloke”文件夹里。
 ![2.png](images/2.png)
 3. 点击”Select a model to load“选择模型即可开启对话模式，也可以根据自己电脑和模型选择对应的“GPU Acceleration”和“Context Length”，重新加载模型。（如果自己的电脑配置一般，建议不勾选”GPU Offload“，以及“Context Length”设置越大，等待时间会越长，更详细的介绍请看指南第四部分）
@@ -263,6 +329,7 @@ https://modelscope.cn/models/limoncc/OPENCHAT3.5-16K-GGUF/files
 2. 可以很方便地切换模型。
 3. 可以很方便地选择CPU和GPU的混合程度。
 4. 可以很方便地切换Preset。
+5. 兼容多模态模型，可以在界面里直接查询图片。
 
 **注意事项：**
 1. 切换模型或者设置参数后一定要记得重新手动加载模型。
@@ -296,6 +363,7 @@ https://modelscope.cn/models/limoncc/OPENCHAT3.5-16K-GGUF/files
 1. 下载文件后即可直接使用。
 2. 开启应用后直接进入服务端模式。
 3. 可以通过命令行方式设置的方式开机启动应用和服务端模式。
+4. 兼容多模态模型，可以在界面里直接查询图片。
 
 **注意事项：**
 1. 目前llamafile的一部分功能依赖于CLI（Command Line Interface），更适合拥有编程能力的用户使用。
@@ -304,7 +372,37 @@ https://modelscope.cn/models/limoncc/OPENCHAT3.5-16K-GGUF/files
 4. 使用过程中更换模型约等于打开另外一个文件，操作起来不怎么方便。
 5. 如果你的系统是Windows/Linux，处理器需要支持AVX2。
 
-#### 3. Ollama
+#### 3. GPT4All
+![20.png](images/20.png)
+**介绍**：一个免费使用、本地运行、具有隐私意识的聊天机器人，无需 GPU 或互联网。
+
+**官网及下载地址**：https://gpt4all.io/
+
+**操作系统：** Windows、Mac、Linux
+
+**相关语言：** 英文
+
+**使用步骤：**
+1. 下载并安装软件。
+2. 选择模型存放路径。
+3. 下载LLMs和RAG模型（如果模型存放路径里有模型，可以直接使用）。
+4. 在应用顶部选择模型后即可对话。
+5. 如果需要开启Server模式，点击一下Wifi图标即可，但无法查看和修改端口。Server模式下端口是4891，完整URL：http://127.0.0.1:4891。
+
+**优点：**
+1. 支持RAG功能。
+2. 可以选择CPU和GPU的混合程度。
+
+**注意事项：**
+1. 在应用内无法查看和修改Server模式下的端口（4891）。
+2. GPT4All有可能没有兼容完整的OpenAI API模式，部分客户端接收不到数据。
+3. 暂时不支持开机启动。
+4. 暂时不支持自动进入服务端模式。
+5. 暂时不支持自动选择RAG的本地文件夹。
+6. 如果你的系统是Windows/Linux，处理器需要支持AVX2。
+7. 用户体验上有待提高。
+
+#### 4. Ollama
 **介绍**：Ollama 是一个基于LLama.cpp的轻量级、可扩展的框架，用于在本地构建和运行语言模型。
 
 **官网及下载地址**：https://ollama.com/
@@ -314,7 +412,7 @@ https://modelscope.cn/models/limoncc/OPENCHAT3.5-16K-GGUF/files
 **相关语言：** 英文
 
 **使用步骤：**
-1. 下载并打开执行文件
+1. 下载并打开执行文件。
 2. 成功安装后会提示在cmd内运行模型，例如`ollama run mistral`（如果没有下载过模型会自动下载模型）。
 ![6.png](images/6.png)
 ![7.png](images/7.png)
@@ -416,6 +514,8 @@ https://modelscope.cn/models/limoncc/OPENCHAT3.5-16K-GGUF/files
 
 ## 4. 使用本地LLMs需要注意什么？
 #### 1. 如何选择LLM并让其运行速度更快？
+
+
 #### 2. 当前LLM经常出现的问题有哪些？
 #### 3. 目前LLM能做什么？
 #### 4. TBD
