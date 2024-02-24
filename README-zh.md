@@ -518,7 +518,8 @@ https://modelscope.cn/models/CruiseTian/gemma-2b-gguf-quantized/summary
 
 #### 2. 当前LLM经常出现的问题有哪些？
 #### 3. 目前LLM能做什么？
-#### 4. TBD
+#### 4. 如何本地使用RAG？
+#### 5. 目前本地RAG是否可用？
 
 ## TBD
 ----------------
