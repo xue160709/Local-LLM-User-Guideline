@@ -4,11 +4,13 @@ If you are very familiar with local LLM, welcome to join our discussion! Discord
 
 ### Updated
 
+**2024-3-03**: Version 0.3 adds an introduction to commonly used terms.
+
 **2024-2-24**: Version 0.2 adds an introduction to the Gemma and Llava models, an introduction to the GPT4ALL software, and an introduction to LLM selection.
 
 **2024-2-17**: Version 0.1.
 
-# Local LLM User Guide 0.2
+# Local LLM User Guide 0.3
 ## 1. Background  
   
 ### 1.1 What are LLMs?  
