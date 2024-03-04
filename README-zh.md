@@ -529,9 +529,9 @@ https://modelscope.cn/models/CruiseTian/gemma-2b-gguf-quantized/summary
 5. LLM模型全部加载到GPU并运行是最快的。
 
 #### 2. 如何让LLM高效运行？
-1. **8G及以下的GPU**：2B-LLM + 4~8k Token或者7B-LLM + 2~4k Token。
-2. **8-12GB的GPU**：7B-LLM + 4k~6k Token或者14B-LLM + 2~4k Token。
-3. **12-24GB的GPU-**：7B-LLM + 8~12k Token或者14B-LLM + 4~8k Token。
+1. **8G及以下的GPU**：2B-LLM + 4-8k Token或者7B-LLM + 2-4k Token。
+2. **8-12GB的GPU**：7B-LLM + 4k-6k Token或者14B-LLM + 2-4k Token。
+3. **12-24GB的GPU-**：7B-LLM + 8-12k Token或者14B-LLM + 4-8k Token。
 
 注意：最终LLM模型体积 + 上下文占用的显存 < GPU显存，否则速度会变慢（例如8k上下文会占用到6~10G的显存），你可以根据自己需求适当选择不同量化模型来减少LLM模型的体积。
 
