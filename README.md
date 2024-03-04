@@ -591,18 +591,6 @@ Note: The final LLM model volume + the video memory occupied by the context < GP
 **Explanation:** The repetition penalty is a mechanism to prevent the language model from repeating the same word or phrase. When repeated generation is detected, the generation probability of these words or phrases will be penalized to reduce their probability of being selected again.
 
 **Note:** By adjusting the size of the repetition penalty, the user can control the variety and novelty of the generated text. Appropriate penalties help improve the readability and information richness of text.
-
-#### Min P
-
-**Explanation:** Min P is a threshold set when using the Top P sampling strategy to filter out words with a probability lower than a certain value P to reduce the chance of generating low-probability words.
-
-**Note:** Setting a Min P value can help reduce the risk of generating irrelevant or meaningless content. By adjusting this value, the user can control the quality and consistency of the language model output.
-
-#### Repeat Penalty
-
-**Explanation:** The repetition penalty is a mechanism to prevent the language model from repeating the same word or phrase. When repeated generation is detected, the generation probability of these words or phrases will be penalized to reduce their probability of being selected again.
-
-**Note:** By adjusting the size of the repetition penalty, the user can control the variety and novelty of the generated text. Appropriate penalties help improve the readability and information richness of text.
   
 ## TBD  
 ----------------  
