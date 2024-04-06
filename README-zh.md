@@ -150,24 +150,24 @@ RAG的切割方式和回调策略直接影响LLM的效果，特别是在处理�
 ### 本地LLMs推荐及下载
 *我们推荐使用GGUF版本的量化模型，因为它可以在CPU和消费级GPU环境下单独或者混合使用。欢迎分享自己使用过不错的模型给我们*
 
-#### 1. Mixtral-8x7B-Instruct-v0.1
-**介绍：** Mixtral 8x7B是一个具有开放权重的专家模型 （MoE） 混合。我们推荐使用Q3及以上的量化模型。
+#### 1. Qwen1.5-32B
+**介绍：** Qwen1.5-32B是阿里云研发的通义千问大模型系列的320亿参数规模的模型。我们推荐使用Q2及以上量化模型。
 
-**官网：** https://mistral.ai/
+**官网：** https://github.com/QwenLM/Qwen1.5
 
-**模型大小：** 8x7B
+**模型大小：** 32B
 
-**相关语言：** 多语言
+**相关语言：** 英文、中文
 
-**上下文长度：** 32K
+**上下文长度：** 32k
 
-**适用于：** 拥有24GB显存及以上的英伟达显卡电脑、拥有16GB内存及以上的M1/M2/M3 Mac
+**适用于：** 拥有24GB显存及以上的英伟达显卡电脑、拥有32GB内存及以上的M1/M2/M3 Mac
 
 **下载地址：**
 
-https://huggingface.co/TheBloke/Mixtral-8x7B-Instruct-v0.1-GGUF/tree/main
+https://huggingface.co/Qwen/Qwen1.5-32B-Chat-GGUF
 
-https://modelscope.cn/models/limoncc/Mixtral-8x7B-Instruct-v0.1-GGUF/files
+https://modelscope.cn/models/qwen/Qwen1.5-32B-Chat-GGUF/summary
 
 
 #### 2. Qwen1.5-14B
@@ -209,7 +209,26 @@ https://huggingface.co/Qwen/Qwen1.5-7B-Chat-GGUF
 https://modelscope.cn/models/qwen/Qwen1.5-7B-Chat-GGUF/summary
 
 
-#### 4. OpenChat 3.5 0106 
+#### 4. Mixtral-8x7B-Instruct-v0.1
+**介绍：** Mixtral 8x7B是一个具有开放权重的专家模型 （MoE） 混合。我们推荐使用Q3及以上的量化模型。
+
+**官网：** https://mistral.ai/
+
+**模型大小：** 8x7B
+
+**相关语言：** 多语言
+
+**上下文长度：** 32K
+
+**适用于：** 拥有24GB显存及以上的英伟达显卡电脑、拥有32GB内存及以上的M1/M2/M3 Mac
+
+**下载地址：**
+
+https://huggingface.co/TheBloke/Mixtral-8x7B-Instruct-v0.1-GGUF/tree/main
+
+https://modelscope.cn/models/limoncc/Mixtral-8x7B-Instruct-v0.1-GGUF/files
+
+#### 5. OpenChat 3.5 0106 
 **介绍：** OpenChat在24年1月份的版本，通过 C-RLFT 在Mistral 7B的基础上进行微调，在推理和中英文双语问答上有较好的表现。我们推荐使用Q4及以上量化模型。
 
 **官网：** https://github.com/imoneoi/openchat
@@ -228,7 +247,7 @@ https://huggingface.co/TheBloke/openchat-3.5-0106-GGUF
 
 https://modelscope.cn/models/fivetwin/openchat-3.5-0106-GGUF/files
 
-#### 5. OpenChat 3.5-16k 
+#### 6. OpenChat 3.5-16k 
 **介绍：** OpenChat在23年12月份的版本，通过 C-RLFT 在Mistral 7B的基础上进行微调，在推理和中英文双语问答上有较好的表现。我们推荐使用Q4及以上量化模型。
 
 **官网：** https://github.com/imoneoi/openchat
@@ -248,7 +267,7 @@ https://huggingface.co/TheBloke/openchat_3.5-16k-GGUF/tree/main
 https://modelscope.cn/models/limoncc/OPENCHAT3.5-16K-GGUF/files
 
 
-#### 6. llava 1.6
+#### 7. llava 1.6
 **介绍：** LLaVA 是用于聊天机器人的多模态模型，拥有计算机视觉和自然处理能力，可以分析图片并用文字进行反馈。
 
 **模型大小：** 7B
@@ -268,7 +287,7 @@ https://huggingface.co/cmp-nct/llava-1.6-gguf/
 https://modelscope.cn/models/mirror013/llava-1.6-mistral-7b-gguf/summary
 
 
-#### 7. Gemma-7b-it
+#### 8. Gemma-7b-it
 **介绍：** Gemma 是 Google 推出的一系列轻量级、最先进的开放模型，采用与创建 Gemini 模型相同的研究和技术构建。它们是文本到文本、仅限解码器的大型语言模型，提供英语版本，具有开放权重、预训练变体和指令调整变体。
 
 **官网：** https://huggingface.co/google/gemma-7b-it
@@ -289,7 +308,7 @@ https://huggingface.co/sayhan/gemma-7b-it-GGUF-quantized
 
 https://modelscope.cn/models/fivetwin/gemma-7b-it-gguf/summary
 
-#### 8. Gemma-2b-it 
+#### 9. Gemma-2b-it 
 **介绍：** Gemma 是 Google 推出的一系列轻量级、最先进的开放模型，采用与创建 Gemini 模型相同的研究和技术构建。它们是文本到文本、仅限解码器的大型语言模型，提供英语版本，具有开放权重、预训练变体和指令调整变体。
 
 **官网：** https://huggingface.co/google/gemma-2b-it

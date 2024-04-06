@@ -149,25 +149,26 @@ Thanks to the open source LLMs provided by Meta, Mistral and many other develope
   
 ### Local LLMs recommended and downloaded  
 *We recommend using the GGUF version of the quantization model as it can be used alone or in a mix of CPU and consumer GPU environments. Feel free to share with us models that you have used well*.  
-  
-#### 1. Mixtral-8x7B-Instruct-v0.1  
-**Introduction:** Mixtral 8x7B is a high quality Sparse Model of Expertise (SMoE) blend with open weights. We recommend using the Q3 and higher versions of the quantization model.  
-  
-**Official website:** https://mistral.ai/  
-  
-**Model size:** 8x7B  
-  
-**Related languages:** Multi-language  
-  
-**Context length:** 32K  
-  
-**Applicable to:** Computers with NVIDIA of 24GB VRAM or above, M1/M2/M3 Macs with 32GB of RAM or above 
-  
-**Downloaded at:**  
-  
-https://huggingface.co/TheBloke/Mixtral-8x7B-Instruct-v0.1-GGUF/tree/main  
-  
-https://modelscope.cn/models/limoncc/Mixtral-8x7B-Instruct-v0.1-GGUF/files  
+
+#### 1. Qwen1.5-32B
+
+**Introduction:** Qwen1.5-32B is a 32 billion parameter scale model of the Tongyi Qianwen large model series developed by Aliyun. We recommend using Q2 and above quantitative models.
+
+**Official website:** [https://github.com/QwenLM/Qwen1.5](https://github.com/QwenLM/Qwen1.5)
+
+**Model size:** 32B
+
+**Related languages:** English, Chinese
+
+**Context length:** 32K
+
+**Applicable to:** Computers with NVIDIA of 24GB VRAM or above, M1/M2/M3 Macs with 32GB of RAM or above
+
+**Downloaded at:**
+
+https://huggingface.co/Qwen/Qwen1.5-32B-Chat-GGUF
+
+https://modelscope.cn/models/qwen/Qwen1.5-32B-Chat-GGUF/summary
 
 #### 2. Qwen1.5-14B  
 **Introduction:** Qwen1.5-14B is a 14 billion parameter scale model of the Tongyi Qianwen large model series developed by Aliyun. We recommend using Q2 and above quantitative models.  
@@ -209,7 +210,26 @@ https://huggingface.co/Qwen/Qwen1.5-7B-Chat-GGUF
 https://modelscope.cn/models/qwen/Qwen1.5-7B-Chat-GGUF/summary
 
 
-#### 4. OpenChat 3.5 0106  
+#### 4. Mixtral-8x7B-Instruct-v0.1  
+**Introduction:** Mixtral 8x7B is a high quality Sparse Model of Expertise (SMoE) blend with open weights. We recommend using the Q3 and higher versions of the quantization model.  
+  
+**Official website:** https://mistral.ai/  
+  
+**Model size:** 8x7B  
+  
+**Related languages:** Multi-language  
+  
+**Context length:** 32K  
+  
+**Applicable to:** Computers with NVIDIA of 24GB VRAM or above, M1/M2/M3 Macs with 32GB of RAM or above 
+  
+**Downloaded at:**  
+  
+https://huggingface.co/TheBloke/Mixtral-8x7B-Instruct-v0.1-GGUF/tree/main  
+  
+https://modelscope.cn/models/limoncc/Mixtral-8x7B-Instruct-v0.1-GGUF/files  
+
+#### 5. OpenChat 3.5 0106  
 **Introduction:** OpenChat's January '24 release, fine-tuned from Mistral 7B via C-RLFT, has better performance in inference and bilingual English/Chinese Q&A. We recommend using Q4 and above quantitative models.  
   
 **Official website:** https://github.com/imoneoi/openchat  
@@ -228,7 +248,7 @@ https://huggingface.co/TheBloke/openchat-3.5-0106-GGUF
   
 https://modelscope.cn/models/fivetwin/openchat-3.5-0106-GGUF/files  
   
-#### 5. OpenChat 3.5-16k  
+#### 6. OpenChat 3.5-16k  
 **Introduction:** OpenChat's December '23 release, fine-tuned from Mistral 7B via C-RLFT, has better performance in inference and bilingual English/Chinese Q&A. We recommend using Q4 and above quantitative models.  
   
 **Official website:** https://github.com/imoneoi/openchat  
@@ -247,7 +267,7 @@ https://huggingface.co/TheBloke/openchat_3.5-16k-GGUF/tree/main
   
 https://modelscope.cn/models/limoncc/OPENCHAT3.5-16K-GGUF/files  
 
-#### 6. llava 1.6  
+#### 7. llava 1.6  
 **Introduction:** LLaVA is a multimodal model for chatbots with computer vision and natural processing capabilities that can analyze images and provide feedback with text.  
   
 **Model size:** 7B  
@@ -264,7 +284,7 @@ https://huggingface.co/cmp-nct/llava-1.6-gguf/
 
 https://modelscope.cn/models/mirror013/llava-1.6-mistral-7b-gguf/summary
 
-#### 7. Gemma-7b-it  
+#### 8. Gemma-7b-it  
 **Introduction:** Gemma is a family of lightweight, state-of-the-art open models from Google, built from the same research and technology used to create the Gemini models. They are text-to-text, decoder-only large language models, available in English, with open weights, pre-trained variants, and instruction-tuned variants.
   
 **Official website:** https://huggingface.co/google/gemma-7b-it 
@@ -285,7 +305,7 @@ https://huggingface.co/sayhan/gemma-7b-it-GGUF-quantized
 
 https://modelscope.cn/models/fivetwin/gemma-7b-it-gguf/summary
 
-#### 8. Gemma-2b-it  
+#### 9. Gemma-2b-it  
 **Introduction:** Gemma is a family of lightweight, state-of-the-art open models from Google, built from the same research and technology used to create the Gemini models. They are text-to-text, decoder-only large language models, available in English, with open weights, pre-trained variants, and instruction-tuned variants. 
   
 **Official website:** https://huggingface.co/google/gemma-2b-it
