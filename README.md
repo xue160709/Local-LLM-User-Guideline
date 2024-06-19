@@ -65,7 +65,7 @@ The pre-training phase equips the LLMs with a large amount of linguistic and wor
   
   
 ### 1.4 Differences between on-line and local LLMs  
-*LLLMs in this context refers specifically to open source models such as Llama, Mistral, GLM, etc.*  
+*LLMs in this context refers specifically to open source models such as Llama, Mistral, GLM, etc.*  
 #### Availability  
 **Online LLMs:** On-line deployed LLMs provide instant access and high availability thanks to the pre-configured LLM and RAG (Retrieval Augmented Generative Model) environments on cloud servers by SaaS (Software as a Service) providers. Users don't have to worry about hardware configuration or installation process and can start using these models immediately for text generation, Q&A and other tasks. This deployment method is particularly suitable for users without specialized technical backgrounds or for organizations that need to deploy solutions quickly.  
   
